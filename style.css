@@ -28,7 +28,8 @@ header{position:sticky;top:0;z-index:1000;background:rgba(0,0,0,.75);backdrop-fi
 .menu-toggle{display:none;background:none;border:1px solid rgba(255,255,255,.15);color:var(--text);padding:6px 10px;border-radius:8px}
 .hero {
   position: relative;
-  height: 100vh;
+  min-height: 60vh;          /* minimum height */
+  max-height: 80vh;           /* optional cap */
   overflow: hidden;
   color: white;
   text-align: center;
@@ -36,6 +37,7 @@ header{position:sticky;top:0;z-index:1000;background:rgba(0,0,0,.75);backdrop-fi
   justify-content: center;
   align-items: center;
 }
+
 
 /* Slideshow container */
 .hero-slideshow {
@@ -192,3 +194,16 @@ footer{border-top:1px solid rgba(255, 255, 255, 0.08);padding:24px 0;color:var(-
   color: var(--brand);
 }
 .cta i { margin-right: 6px; }
+
+@media (max-width: 700px) {
+  .hero {
+    min-height: 50vh;     /* smaller on phones */
+    max-height: 60vh;
+  }
+  .hero h1 {
+    font-size: 28px;
+  }
+  .hero p {
+    font-size: 16px;
+  }
+}

@@ -28,8 +28,8 @@ header{position:sticky;top:0;z-index:1000;background:rgba(0,0,0,.75);backdrop-fi
 .menu-toggle{display:none;background:none;border:1px solid rgba(255,255,255,.15);color:var(--text);padding:6px 10px;border-radius:8px}
 .hero {
   position: relative;
-  min-height: 60vh;          /* minimum height */
-  max-height: 80vh;           /* optional cap */
+  min-height: 80vh;          /* minimum height */
+  max-height: 100vh;           /* optional cap */
   overflow: hidden;
   color: white;
   text-align: center;

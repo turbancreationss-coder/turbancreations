@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — TurbanCreations</title>
+  <meta name="description" content="About TurbanCreations and founder Ajit Singh. Professional turban tying with trust and satisfaction.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="images/logo.jpg">
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a href="index.html" class="brand">
+      <img src="images/logo.jpg" alt="TurbanCreations logo"/>
+      <div class="title"><span>Turban</span>Creations</div>
+    </a>
+    <button class="menu-toggle" onclick="document.querySelector('.links').classList.toggle('show')">Menu</button>
+    <nav class="links"><a href="index.html" class="">Home</a><a href="about.html" class="active">About</a><a href="services.html" class="">Services</a><a href="gallery.html" class="">Gallery</a><a href="contact.html" class="">Contact</a></nav>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container grid-2 color:white">
+    <div>
+      <h2>About TurbanCreations</h2>
+      <p class="lead">We specialize in professional turban tying for weddings, special occasions, and cultural events. Our services are available at your comfort place — at home or at your chosen venue.</p>
+      <p>Founded by <strong>Ajit Singh</strong>, TurbanCreations is built on trust, satisfaction, and a passion for keeping our tradition alive. With years of experience and dedication, we ensure every turban is tied with perfection and grace.</p>
+      <p><strong>ਸਾਡਾ ਅਸਲੀ ਮਕਸਦ</strong> ਹਰ ਇਕ ਸਿੱਖ ਨੌਜਵਾਨ ਨੂੰ ਸਿੱਖੀ ਨਾਲ ਜੋੜਨਾ ਹੈ, ਤਾਂ ਜੋ ਅਸੀਂ <em>ਸਬਤ ਸੂਰਤ</em> ਦੀ ਪਹਚਾਨ ਨੂੰ ਸਦਾ ਬਰਕਰਾਰ ਰੱਖ ਸਕੀਏ।</p>
+      <p>Along with our services, we also share <strong>turban tutorial videos</strong> on YouTube and Instagram to help others learn and embrace the beauty of turban tying.</p>
+      <p><a class="cta" href="gallery.html">See Gallery</a></p>
+    </div>
+    <div>
+      <img src="images/ajit.jpg" alt="Ajit Singh Founder" class="round-photo">
+      <p style="text-align:center;margin-top:10px;color:var(--muted)"><b> Ajit Singh — Founder of TurbanCreations</b></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2025 TurbanCreations • Designed by Ajit Singh • Instagram @turbancreations_ • YouTube @turbancreationss
+</footer>
+<script>
+document.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',()=>{
+  document.querySelector('.links').classList.remove('show');
+}));
+</script>
+
+</body>
+</html>

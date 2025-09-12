@@ -1,0 +1,1 @@
+Place your logo as images/logo.png and your portrait as images/ajit.jpg. Replace sample images in images/ folder. Deploy by dragging this folder to Netlify.

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — TurbanCreations</title>
+  <meta name="description" content="Wedding turbans, event turbans, home service, and tutorials by TurbanCreations.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="images/logo.jpg">
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a href="index.html" class="brand">
+      <img src="images/logo.jpg" alt="TurbanCreations logo"/>
+      <div class="title"><span>Turban</span>Creations</div>
+    </a>
+    <button class="menu-toggle" onclick="document.querySelector('.links').classList.toggle('show')">Menu</button>
+    <nav class="links"><a href="index.html" class="">Home</a><a href="about.html" class="">About</a><a href="services.html" class="active">Services</a><a href="gallery.html" class="">Gallery</a><a href="contact.html" class="">Contact</a></nav>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <h2>Our Services</h2>
+    <p class="lead">Premium, punctual, and personalized turban tying services.</p>
+    <div class="cards">
+      <div class="card"><h3>Wedding Turbans</h3><p>Elegant and durable styling for the groom and family. Traditional Anand Karaj looks to reception-ready styles.</p></div>
+      <div class="card"><h3>Event & Party Turbans</h3><p>Perfect for cultural programs, photoshoots, and festive celebrations.</p></div>
+      <div class="card"><h3>Home / Venue Service</h3><p>We travel to your home or event venue for maximum comfort and convenience.</p></div>
+      <div class="card"><h3>All Styles</h3><p>Dumalla, Patiala Shahi, Amritsar Shahi, Modern layered looks — tied to perfection.</p></div>
+      <div class="card"><h3>Tutorials & Training</h3><p>Follow our YouTube & Instagram tutorials to learn step-by-step turban tying.</p></div>
+      <div class="card"><h3>Group Bookings</h3><p>Special packages for baraat, family, and group events.</p></div>
+    </div>
+  </div>
+</section>
+<section class="section alt">
+  <div class="container">
+    <h2>Ready to Book?</h2>
+    <p class="lead">Call or WhatsApp us for quick confirmation and scheduling.</p>
+    <p>
+      <a class="cta" href="contact.html">Contact Page</a>
+      <a class="whatsapp" href="https://wa.me/919876366903" target="_blank">WhatsApp</a>
+    </p>
+  </div>
+</section>
+
+<footer>
+  © 2025 TurbanCreations • Designed by Ajit Singh • Instagram @turbancreations_ • YouTube @turbancreationss
+</footer>
+<script>
+document.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',()=>{
+  document.querySelector('.links').classList.remove('show');
+}));
+</script>
+
+</body>
+</html>

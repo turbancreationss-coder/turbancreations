@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — TurbanCreations</title>
+  <meta name="description" content="Contact TurbanCreations — booking for weddings and special events.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="images/logo.jpg">
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a href="index.html" class="brand">
+      <img src="images/logo.jpg" alt="TurbanCreations logo"/>
+      <div class="title"><span>Turban</span>Creations</div>
+    </a>
+    <button class="menu-toggle" onclick="document.querySelector('.links').classList.toggle('show')">Menu</button>
+    <nav class="links"><a href="index.html" class="">Home</a><a href="about.html" class="">About</a><a href="services.html" class="">Services</a><a href="gallery.html" class="">Gallery</a><a href="contact.html" class="active">Contact</a></nav>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container grid-2">
+    <div>
+      <h2>Contact Us</h2>
+      <p class="lead">We would love to be a part of your special day! At TurbanCreations, we provide professional turban tying services for weddings, events, and personal occasions. You can reach us easily by phone, WhatsApp, Instagram, or email. Book us today and let us help you look your best with a perfectly tied turban.</p>
+      <p><strong>Phone/WhatsApp:</strong> 9876366903</p>
+      <p><strong>Instagram:</strong> <a href="https://instagram.com/turbancreations_" target="_blank">@turbancreations_</a></p>
+      <p><strong>YouTube:</strong> <a href="https://youtube.com/@turbancreationss" target="_blank">@turbancreationss</a></p>
+      <p><a class="whatsapp" href="https://wa.me/919876366903" target="_blank">Chat on WhatsApp</a></p>
+    </div>
+    <div>
+      <form class="form" name="contact" method="POST" data-netlify="true">
+        <input class="input" type="text" name="name" placeholder="Your Name" required>
+        <input class="input" type="tel" name="phone" placeholder="Phone or WhatsApp" required>
+        <input class="input" type="email" name="email" placeholder="Email (optional)">
+        <textarea class="input" name="message" placeholder="Tell us your event date, location, and style preference" required></textarea>
+        <button class="btn" type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2025 TurbanCreations • Designed by Ajit Singh • Instagram @turbancreations_ • YouTube @turbancreationss
+</footer>
+<script>
+document.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',()=>{
+  document.querySelector('.links').classList.remove('show');
+}));
+</script>
+
+</body>
+</html>

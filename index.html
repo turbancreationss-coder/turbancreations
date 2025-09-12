@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TurbanCreations — Professional Turban Tying</title>
+  <meta name="description" content="TurbanCreations: professional turban tying for weddings & special events. Home service available. Book at 9876366903.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="images/logo.jpg
+">
+</head>
+
+<body>
+<header>
+  <div class="container nav">
+    <a href="index.html" class="brand">
+      <img src="images/logo.jpg" alt="TurbanCreations logo"/>
+      <div class="title"><span>Turban</span>Creations</div>
+    </a>
+    <button class="menu-toggle" onclick="document.querySelector('.links').classList.toggle('show')">Menu</button>
+    <nav class="links"><a href="index.html" class="active">Home</a><a href="about.html" class="">About</a><a href="services.html" class="">Services</a><a href="gallery.html" class="">Gallery</a><a href="contact.html" class="">Contact</a></nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-slideshow">
+    <div class="slide active" style="background-image: url('images/hero1.jpg');"></div>
+    <div class="slide" style="background-image: url('images/hero2.jpg');"></div>
+    <div class="slide" style="background-image: url('images/hero3.jpg');"></div>
+  </div>
+
+  <div class="container" style=" z-index:2;">
+    <h1><b>Royal Turban Tying for Weddings & Special Events</b></h1>
+    <p><b>Premium turban styling by Ajit Singh. We come to your venue or home. Traditional, modern, and custom styles — tied to perfection.</b></p>
+    <p>
+      <a class="cta" href="contact.html">Book Now</a>
+      <a class="cta" href="https://wa.me/919876366903" target="_blank" style="background:#25D366;color:#111;margin-left:10px">WhatsApp</a>
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Why Choose <span style="color:var(--brand)">TurbanCreations</span>?</h2>
+    <p class="lead">Experience, precision, and respect for tradition. We deliver a regal look that lasts throughout your celebration.</p>
+    <div class="cards">
+      <div class="card"><h3>Wedding Specialists</h3><p>From Anand Karaj to reception looks — we craft styles that suit your outfit and face shape.</p></div>
+      <div class="card"><h3>Home & Venue Service</h3><p>Comfort-first. We travel to your home or event location — punctual and professional.</p></div>
+      <div class="card"><h3>All Turban Styles</h3><p>Classic, modern, Dumalla, Patiala Shahi, or custom — you name it, we tie it perfectly.</p></div>
+    </div>
+  </div>
+</section>
+<section class="section alt">
+  <div class="container">
+    <h2>Learn with Us</h2>
+    <p class="lead">We share turban tutorial videos on YouTube and Instagram. Follow and learn step-by-step.</p>
+    <p>
+      <a class="cta" href="https://instagram.com/turbancreations_" target="_blank">Instagram</a>
+      <a class="cta" href="https://youtube.com/@turbancreationss" target="_blank" style="margin-left:10px">YouTube</a>
+    </p>
+  </div>
+</section>
+
+<footer>
+  © 2025 TurbanCreations • Designed by Ajit Singh • Instagram @turbancreations_ • YouTube @turbancreationss
+</footer>
+<script>
+document.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',()=>{
+  document.querySelector('.links').classList.remove('show');
+}));
+
+let slides = document.querySelectorAll(".hero-slideshow .slide");
+let currentSlide = 0;
+
+function showSlide() {
+  slides.forEach((slide, index) => {
+    slide.classList.remove("active");
+    if (index === currentSlide) slide.classList.add("active");
+  });
+  currentSlide = (currentSlide + 1) % slides.length;
+}
+
+setInterval(showSlide, 3000); // every 4 sec
+
+</script>
+
+</body>
+</html>

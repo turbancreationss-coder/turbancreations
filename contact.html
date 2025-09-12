@@ -7,6 +7,8 @@
   <meta name="description" content="Contact TurbanCreations — booking for weddings and special events.">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="images/logo.jpg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 <body>
 <header>
@@ -25,12 +27,12 @@
     <div>
       <h2>Contact Us</h2>
       <p class="lead">We would love to be a part of your special day! At TurbanCreations, we provide professional turban tying services for weddings, events, and personal occasions. You can reach us easily by phone, WhatsApp, Instagram, or email. Book us today and let us help you look your best with a perfectly tied turban.</p>
-      <p><strong>Phone/WhatsApp:</strong> 9876366903</p>
-      <p><strong>Instagram:</strong> <a href="https://instagram.com/turbancreations_" target="_blank">@turbancreations_</a></p>
-      <p><strong>YouTube:</strong> <a href="https://youtube.com/@turbancreationss" target="_blank">@turbancreationss</a></p>
-      <p><a class="whatsapp" href="https://wa.me/919876366903" target="_blank">Chat on WhatsApp</a></p>
+      <p><strong>Phone/WhatsApp:</strong><i class="fas fa-phone"></i> 9876366903</p>
+      <p><strong>Instagram:</strong> <a href="https://instagram.com/turbancreations_" target="_blank"><i class="fab fa-instagram"></i> @turbancreations_</a></p>
+      <p><strong>YouTube:</strong> <a href="https://youtube.com/@turbancreationss" target="_blank"><i class="fab fa-youtube"></i> @turbancreationss</a></p>
+      <p><a class="whatsapp" href="https://wa.me/919876366903" target="_blank"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a></p>
     </div>
-    <div>
+       <div>
       <form class="form" name="contact" method="POST" data-netlify="true">
         <input class="input" type="text" name="name" placeholder="Your Name" required>
         <input class="input" type="tel" name="phone" placeholder="Phone or WhatsApp" required>
@@ -43,8 +45,16 @@
 </section>
 
 <footer>
-  © 2025 TurbanCreations • Designed by Ajit Singh • Instagram @turbancreations_ • YouTube @turbancreationss
+  <p>© 2025 TurbanCreations • Designed by Ajit Singh Pandher</p>
+  <div class="social-icons">
+    <a href="tel:+919876366903" title="Call"><i class="fas fa-phone"></i></a>
+    <a href="https://wa.me/919876366903" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.instagram.com/turbancreations_" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/@turbancreationss" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.facebook.com/ajitsinghpandherr" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+  </div>
 </footer>
+
 <script>
 document.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',()=>{
   document.querySelector('.links').classList.remove('show');

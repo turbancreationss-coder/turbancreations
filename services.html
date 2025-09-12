@@ -7,6 +7,7 @@
   <meta name="description" content="Wedding turbans, event turbans, home service, and tutorials by TurbanCreations.">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="images/logo.jpg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 <header>
@@ -39,15 +40,23 @@
     <h2>Ready to Book?</h2>
     <p class="lead">Call or WhatsApp us for quick confirmation and scheduling.</p>
     <p>
-      <a class="cta" href="contact.html">Contact Page</a>
-      <a class="whatsapp" href="https://wa.me/919876366903" target="_blank">WhatsApp</a>
+      <a class="cta" href="contact.html"><i class="fas fa-phone"></i> Contact Page</a>
+      <a class="whatsapp" href="https://wa.me/919876366903" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
     </p>
   </div>
 </section>
 
 <footer>
-  © 2025 TurbanCreations • Designed by Ajit Singh • Instagram @turbancreations_ • YouTube @turbancreationss
+  <p>© 2025 TurbanCreations • Designed by Ajit Singh Pandher</p>
+  <div class="social-icons">
+    <a href="tel:+919876366903" title="Call"><i class="fas fa-phone"></i></a>
+    <a href="https://wa.me/919876366903" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.instagram.com/turbancreations_" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/@turbancreationss" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.facebook.com/ajitsinghpandherr" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+  </div>
 </footer>
+
 <script>
 document.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',()=>{
   document.querySelector('.links').classList.remove('show');

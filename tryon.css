@@ -1,0 +1,62 @@
+/* Preview container */
+#preview-container {
+  position: relative;
+  max-width: 400px;       /* responsive max width */
+  width: 100%;            /* takes full width on smaller screens */
+  margin: 20px auto;      /* center horizontally with some spacing */
+  border: 1px solid #ddd; /* optional: subtle border */
+  border-radius: 8px;     /* smooth corners */
+  overflow: hidden;       /* ensure overlay stays inside */
+  background-color: #f9f9f9;
+}
+
+/* Uploaded user photo */
+#user-img {
+  width: 100%;
+  display: block;
+}
+
+/* Turban overlay */
+#turban-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  pointer-events: none;
+  /* width will be set dynamically by JS */
+}
+
+/* Turban style buttons */
+#buttons {
+  text-align: center;
+  margin-top: 10px;
+}
+
+#buttons button {
+  margin: 5px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  border: 1px solid #ff9900;
+  background-color: #fff;
+  color: #ff9900;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+#buttons button:hover {
+  background-color: #ff9900;
+  color: #fff;
+}
+
+/* Optional: make Try-On section responsive */
+@media (max-width: 500px) {
+  #preview-container {
+    max-width: 90%;
+  }
+
+  #buttons button {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}

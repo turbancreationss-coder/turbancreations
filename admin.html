@@ -493,17 +493,23 @@ async function(id){
     student.phone
   );
 
+  if(newPhone === null) return;
+
   const newFees =
   prompt(
     "Enter New Fees",
     student.fees
   );
 
+  if(newFees === null) return;
+
   const newStatus =
   prompt(
     "Enter Status: Paid or Pending",
     student.status || "Paid"
   );
+
+  if(newStatus === null) return;
 
   try{
 
@@ -519,7 +525,15 @@ async function(id){
 
         fees:newFees,
 
-        status:newStatus
+        status:newStatus,
+
+        course:student.course,
+
+        email:student.email,
+
+        address:student.address,
+
+        notes:student.notes
 
       }
 
@@ -531,7 +545,9 @@ async function(id){
 
     loadStudents();
 
-  }catch(error){
+  }
+
+  catch(error){
 
     console.error(error);
 
@@ -542,8 +558,6 @@ async function(id){
   }
 
 }
-
-
 
 document
 .getElementById("searchInput")

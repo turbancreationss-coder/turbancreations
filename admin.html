@@ -267,8 +267,6 @@
     </tbody>
 
   </table>
-
-
 <script type="module">
 
 import { db }
@@ -279,7 +277,8 @@ import {
   collection,
   getDocs,
   deleteDoc,
-  doc
+  doc,
+  updateDoc
 
 }
 
@@ -423,6 +422,14 @@ function renderStudents(students){
         <td>
 
           <button
+          class="btn edit-btn"
+          onclick="editStudent('${student.id}')">
+
+            Edit
+
+          </button>
+
+          <button
           class="btn delete-btn"
           onclick="deleteStudent('${student.id}')">
 
@@ -459,6 +466,80 @@ async function(id){
   );
 
   loadStudents();
+
+}
+
+
+
+window.editStudent =
+async function(id){
+
+  const student =
+  allStudents.find(
+    s => s.id === id
+  );
+
+  const newName =
+  prompt(
+    "Enter New Name",
+    student.name
+  );
+
+  if(newName === null) return;
+
+  const newPhone =
+  prompt(
+    "Enter New Phone",
+    student.phone
+  );
+
+  const newFees =
+  prompt(
+    "Enter New Fees",
+    student.fees
+  );
+
+  const newStatus =
+  prompt(
+    "Enter Status: Paid or Pending",
+    student.status || "Paid"
+  );
+
+  try{
+
+    await updateDoc(
+
+      doc(db,"students",id),
+
+      {
+
+        name:newName,
+
+        phone:newPhone,
+
+        fees:newFees,
+
+        status:newStatus
+
+      }
+
+    );
+
+    alert(
+      "Student Updated Successfully"
+    );
+
+    loadStudents();
+
+  }catch(error){
+
+    console.error(error);
+
+    alert(
+      "Error Updating Student"
+    );
+
+  }
 
 }
 
@@ -501,6 +582,5 @@ document
 loadStudents();
 
 </script>
-
 </body>
 </html>

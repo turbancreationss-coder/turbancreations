@@ -267,11 +267,19 @@ table td{
   <!-- INFO -->
   <div class="info">
 
-    <div class="info-left">
-      <p><i class="fas fa-phone"></i> +91 9876366903</p>
-      <p><i class="fab fa-instagram"></i> @turbancreations_</p>
-      <p><i class="fas fa-location-dot"></i> Ludhiana, Punjab</p>
-    </div>
+<div class="info-left">
+
+  <p><i class="fas fa-phone"></i> +91 9876366903</p>
+
+  <p><i class="fab fa-instagram"></i> Instagram: @turbancreations_</p>
+
+  <p><i class="fab fa-facebook"></i> Facebook: Ajit Singh Pandher</p>
+
+  <p><i class="fab fa-youtube"></i> YouTube: TurbanCreations</p>
+
+  <p><i class="fas fa-globe"></i> Website: turbancreations.netlify.app</p>
+
+</div>
 
     <div class="info-box" id="infoBox"></div>
 
@@ -284,6 +292,20 @@ table td{
   <div class="row"><label>Father : </label><div class="line" id="father"></div></div>
   <div class="row"><label>Phone : </label><div class="line" id="phone"></div></div>
   <div class="row"><label>Address : </label><div class="line" id="address"></div></div>
+  <div class="row">
+  <label>Course</label>
+  <div class="line" id="course"></div>
+</div>
+
+<div class="row">
+  <label>Batch Timing</label>
+  <div class="line" id="batch"></div>
+</div>
+
+<div class="row">
+  <label>Training Mode</label>
+  <div class="line">Offline</div>
+</div>
 
   <!-- MAIN -->
   <div class="main">
@@ -381,7 +403,9 @@ document.getElementById("infoBox").innerHTML = `
 <b>Date:</b> ${new Date().toLocaleDateString()}<br>
 <b>Status:</b> ${student.status || "Paid"}
 `;
+document.getElementById("course").innerText = student.course || "Turban Training";
 
+document.getElementById("batch").innerText = student.batch || "Morning Batch";
 </script>
 
 </body>

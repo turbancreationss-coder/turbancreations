@@ -3,7 +3,8 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>TurbanCreations Receipt</title>
 
@@ -22,7 +23,7 @@ body{
 
   font-family:Arial,sans-serif;
 
-  background:#e8e8e8;
+  background:#ececec;
 
   padding:15px;
 
@@ -32,17 +33,17 @@ body{
 
   width:210mm;
 
-  height:297mm;
-
-  background:white;
+  min-height:297mm;
 
   margin:auto;
 
+  background:white;
+
   border:2px solid #f57c00;
 
-  overflow:hidden;
-
   padding:14px 18px;
+
+  overflow:hidden;
 
 }
 
@@ -54,6 +55,8 @@ body{
 
   color:white;
 
+  border-radius:10px;
+
   padding:12px 18px;
 
   display:flex;
@@ -61,8 +64,6 @@ body{
   justify-content:space-between;
 
   align-items:center;
-
-  border-radius:10px;
 
 }
 
@@ -100,19 +101,19 @@ body{
 
 .logo-text p{
 
-  font-size:12px;
-
   margin-top:5px;
+
+  font-size:12px;
 
 }
 
-.receipt-heading{
+.receipt-title{
 
   text-align:right;
 
 }
 
-.receipt-heading h2{
+.receipt-title h2{
 
   color:#ff9800;
 
@@ -120,7 +121,7 @@ body{
 
 }
 
-.receipt-heading h1{
+.receipt-title h1{
 
   font-size:38px;
 
@@ -128,7 +129,7 @@ body{
 
 }
 
-/* INFO */
+/* INFO SECTION */
 
 .top-info{
 
@@ -136,7 +137,7 @@ body{
 
   justify-content:space-between;
 
-  gap:18px;
+  gap:20px;
 
   margin-top:12px;
 
@@ -150,7 +151,7 @@ body{
 
 .left-info p{
 
-  margin-bottom:8px;
+  margin-bottom:7px;
 
   font-size:14px;
 
@@ -160,13 +161,13 @@ body{
 
   color:#ff9800;
 
-  width:20px;
+  width:18px;
 
 }
 
 .right-info{
 
-  width:40%;
+  width:38%;
 
   border:2px solid #ff9800;
 
@@ -194,19 +195,19 @@ body{
 
   display:inline-block;
 
-  padding:7px 15px;
+  padding:6px 14px;
+
+  border-radius:5px;
+
+  margin:10px 0 8px;
 
   font-size:16px;
 
   font-weight:bold;
 
-  margin:10px 0 8px;
-
-  border-radius:5px;
-
 }
 
-/* DETAILS */
+/* STUDENT DETAILS */
 
 .form-row{
 
@@ -236,9 +237,9 @@ body{
 
   min-height:22px;
 
-  font-size:14px;
-
   padding-left:8px;
+
+  font-size:14px;
 
 }
 
@@ -258,11 +259,9 @@ table th{
 
   background:#ff9800;
 
-  color:black;
+  border:1px solid #444;
 
   padding:8px;
-
-  border:1px solid #444;
 
   text-align:left;
 
@@ -334,7 +333,7 @@ table td{
 
   padding:10px;
 
-  margin-top:10px;
+  margin-top:5px;
 
   background:#fafafa;
 
@@ -344,7 +343,7 @@ table td{
 
   color:#ff9800;
 
-  margin-bottom:8px;
+  margin-bottom:7px;
 
   font-size:16px;
 
@@ -374,7 +373,7 @@ table td{
 
 .qr-img{
 
-  width:105px;
+  width:100px;
 
   border:2px solid black;
 
@@ -394,7 +393,7 @@ table td{
 
 .stamp-img{
 
-  width:85px;
+  width:80px;
 
   margin-top:10px;
 
@@ -402,7 +401,7 @@ table td{
 
 .signature{
 
-  margin-top:8px;
+  margin-top:5px;
 
   font-size:13px;
 
@@ -416,7 +415,7 @@ table td{
 
   text-align:center;
 
-  margin-top:10px;
+  margin-top:4px;
 
 }
 
@@ -434,7 +433,7 @@ table td{
 
   margin-top:4px;
 
-  font-size:15px;
+  font-size:14px;
 
 }
 
@@ -444,9 +443,9 @@ table td{
 
   position:fixed;
 
-  top:15px;
-
   right:15px;
+
+  top:15px;
 
   background:#ff9800;
 
@@ -494,7 +493,7 @@ table td{
 
     width:210mm;
 
-    height:297mm;
+    min-height:297mm;
 
   }
 
@@ -534,7 +533,7 @@ Print Receipt
 
     </div>
 
-    <div class="receipt-heading">
+    <div class="receipt-title">
 
       <h2>
         TRAINING RECEIPT
@@ -606,31 +605,54 @@ Print Receipt
 
 
   <div class="form-row">
-    <label>Student Name</label>
+
+    <label>
+      Student Name
+    </label>
+
     <div class="line">
       Harpreet Kaur
     </div>
+
   </div>
 
+
   <div class="form-row">
-    <label>Father Name</label>
+
+    <label>
+      Father Name
+    </label>
+
     <div class="line">
       Gurwinder Singh
     </div>
+
   </div>
 
+
   <div class="form-row">
-    <label>Mobile Number</label>
+
+    <label>
+      Mobile Number
+    </label>
+
     <div class="line">
       9855114811
     </div>
+
   </div>
 
+
   <div class="form-row">
-    <label>Address</label>
+
+    <label>
+      Address
+    </label>
+
     <div class="line">
       Ludhiana, Punjab
     </div>
+
   </div>
 
 
@@ -642,13 +664,19 @@ Print Receipt
   <table>
 
     <tr>
-      <th>Description</th>
+
+      <th>
+        Description
+      </th>
+
       <th width="180">
         Amount
       </th>
+
     </tr>
 
     <tr>
+
       <td>
         Basic Turban Training
       </td>
@@ -656,9 +684,11 @@ Print Receipt
       <td>
         ₹ 5,000
       </td>
+
     </tr>
 
     <tr>
+
       <td>
         Registration Charges
       </td>
@@ -666,9 +696,11 @@ Print Receipt
       <td>
         ₹ 500
       </td>
+
     </tr>
 
     <tr>
+
       <td>
         Discount
       </td>
@@ -676,6 +708,7 @@ Print Receipt
       <td>
         ₹ 0
       </td>
+
     </tr>
 
     <tr class="total-row">
@@ -697,6 +730,7 @@ Print Receipt
 
     <div class="payment-left">
 
+
       <div class="payment-row">
 
         <label>
@@ -704,10 +738,19 @@ Print Receipt
         </label>
 
         <div>
-          UPI / Cash
+
+          <input type="checkbox" checked>
+          Cash
+
+          &nbsp;&nbsp;
+
+          <input type="checkbox">
+          UPI
+
         </div>
 
       </div>
+
 
       <div class="payment-row">
 
@@ -720,6 +763,7 @@ Print Receipt
         </div>
 
       </div>
+
 
       <div class="payment-row">
 

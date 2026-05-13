@@ -3,380 +3,358 @@
 
 <head>
 
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-  <meta name="viewport"
-  content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-  <title>TurbanCreations Admin Panel</title>
+<title>TurbanCreations Admin Panel</title>
 
-  <style>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
+<style>
 
-    body{
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-      font-family:Arial,sans-serif;
+body{
 
-      background:#f5f5f5;
+  font-family:Arial,sans-serif;
 
-      padding:30px;
+  background:#f4f4f4;
 
-    }
+  padding:25px;
 
-    h1{
+}
 
-      text-align:center;
+h1{
 
-      margin-bottom:20px;
+  text-align:center;
 
-      color:#111;
+  margin-bottom:25px;
 
-    }
+  color:#111;
 
-    .logout-box{
+}
 
-      text-align:right;
+.top-bar{
 
-      margin-bottom:20px;
+  margin-bottom:25px;
 
-    }
+}
 
-    #logoutBtn{
+#searchInput{
 
-      padding:12px 20px;
+  width:100%;
 
-      border:none;
+  padding:15px;
 
-      border-radius:10px;
+  border:none;
 
-      background:#dc3545;
+  border-radius:10px;
 
-      color:white;
+  font-size:16px;
 
-      font-weight:bold;
+  box-shadow:0 3px 10px rgba(0,0,0,0.1);
 
-      cursor:pointer;
+}
 
-    }
+.stats{
 
-    .top-bar{
+  display:grid;
 
-      margin-bottom:25px;
+  grid-template-columns:
+  repeat(auto-fit,minmax(220px,1fr));
 
-    }
+  gap:20px;
 
-    #searchInput{
+  margin-bottom:30px;
 
-      width:100%;
+}
 
-      padding:14px;
+.card{
 
-      border:none;
+  background:white;
 
-      border-radius:10px;
+  padding:25px;
 
-      font-size:16px;
+  border-radius:15px;
 
-      box-shadow:0 3px 10px rgba(0,0,0,0.1);
+  box-shadow:0 3px 10px rgba(0,0,0,0.1);
 
-    }
+}
 
-    .stats{
+.card h2{
 
-      display:grid;
+  font-size:18px;
 
-      grid-template-columns:
-      repeat(auto-fit,minmax(220px,1fr));
+  margin-bottom:10px;
 
-      gap:20px;
+  color:#666;
 
-      margin-bottom:30px;
+}
 
-    }
+.card p{
 
-    .card{
+  font-size:34px;
 
-      background:white;
+  font-weight:bold;
 
-      padding:25px;
+  color:#111;
 
-      border-radius:15px;
+}
 
-      box-shadow:0 3px 10px rgba(0,0,0,0.1);
+.table-wrapper{
 
-    }
+  overflow-x:auto;
 
-    .card h2{
+}
 
-      font-size:18px;
+table{
 
-      margin-bottom:10px;
+  width:100%;
 
-      color:#666;
+  border-collapse:collapse;
 
-    }
+  background:white;
 
-    .card p{
+  border-radius:15px;
 
-      font-size:34px;
+  overflow:hidden;
 
-      font-weight:bold;
+  box-shadow:0 3px 10px rgba(0,0,0,0.1);
 
-      color:#111;
+}
 
-    }
+th{
 
-    table{
+  background:#111;
 
-      width:100%;
+  color:white;
 
-      border-collapse:collapse;
+  padding:15px;
 
-      background:white;
+  text-align:left;
 
-      border-radius:15px;
+  font-size:14px;
 
-      overflow:hidden;
+}
 
-      box-shadow:0 3px 10px rgba(0,0,0,0.1);
+td{
 
-    }
+  padding:14px;
 
-    th{
+  border-bottom:1px solid #ddd;
 
-      background:#111;
+  font-size:14px;
 
-      color:white;
+}
 
-      padding:15px;
+tr:hover{
 
-      text-align:left;
+  background:#fafafa;
 
-    }
+}
 
-    td{
+.btn{
 
-      padding:15px;
+  border:none;
 
-      border-bottom:1px solid #ddd;
+  padding:9px 14px;
 
-    }
+  border-radius:8px;
 
-    tr:hover{
+  color:white;
 
-      background:#f9f9f9;
+  cursor:pointer;
 
-    }
+  font-weight:bold;
 
-    .btn{
+  margin-right:6px;
 
-      border:none;
+}
 
-      padding:10px 14px;
+.edit-btn{
 
-      border-radius:8px;
+  background:#0d6efd;
 
-      color:white;
+}
 
-      cursor:pointer;
+.delete-btn{
 
-      font-weight:bold;
+  background:#dc3545;
 
-      margin-right:8px;
+}
 
-    }
+.receipt-btn{
 
-    .edit-btn{
+  background:#198754;
 
-      background:#0d6efd;
+}
 
-    }
+.status{
 
-    .delete-btn{
+  padding:7px 12px;
 
-      background:#dc3545;
+  border-radius:30px;
 
-    }
-    
-     .receipt-btn{
+  color:white;
 
-  background:#ff7a00;
+  font-size:12px;
 
-     }
-    .status{
+  font-weight:bold;
 
-      padding:7px 14px;
+}
 
-      border-radius:30px;
+.paid{
 
-      color:white;
+  background:green;
 
-      font-size:13px;
+}
 
-      font-weight:bold;
+.pending{
 
-    }
+  background:orange;
 
-    .paid{
+}
 
-      background:green;
+.payment-badge{
 
-    }
+  padding:6px 10px;
 
-    .pending{
+  border-radius:30px;
 
-      background:orange;
+  font-size:12px;
 
-    }
+  font-weight:bold;
 
-    @media(max-width:768px){
+  background:#eee;
 
-      body{
+}
 
-        padding:15px;
+@media(max-width:768px){
 
-      }
+  body{
 
-      table{
+    padding:15px;
 
-        font-size:14px;
+  }
 
-      }
+}
 
-      th,td{
-
-        padding:10px;
-
-      }
-
-    }
-
-  </style>
+</style>
 
 </head>
 
 <body>
 
-<h1>TurbanCreations Admin Panel</h1>
-
-
-<div class="logout-box">
-
-  <button id="logoutBtn">
-
-    Logout
-
-  </button>
-
-</div>
+<h1>
+TurbanCreations Admin Panel
+</h1>
 
 
 <div class="top-bar">
 
-  <input
-  type="text"
-  id="searchInput"
-  placeholder="Search student by name or phone">
+<input
+type="text"
+id="searchInput"
+placeholder="Search student by name or phone">
 
 </div>
 
 
 <div class="stats">
 
-  <div class="card">
+<div class="card">
 
-    <h2>Total Students</h2>
+<h2>
+Total Students
+</h2>
 
-    <p id="totalStudents">0</p>
+<p id="totalStudents">
+0
+</p>
 
-  </div>
+</div>
 
 </div>
 
 
+<div class="table-wrapper">
+
 <table>
 
-  <thead>
+<thead>
 
-    <tr>
+<tr>
 
-      <th>Student Name</th>
+<th>
+Student
+</th>
 
-      <th>Father Name</th>
+<th>
+Father
+</th>
 
-      <th>Phone</th>
+<th>
+Phone
+</th>
 
-      <th>Course</th>
+<th>
+Course
+</th>
 
-      <th>Batch</th>
+<th>
+Fees
+</th>
 
-      <th>Status</th>
+<th>
+Payment
+</th>
 
-      <th>Actions</th>
+<th>
+Status
+</th>
 
-    </tr>
+<th>
+Actions
+</th>
 
-  </thead>
+</tr>
 
-  <tbody id="studentTableBody">
+</thead>
 
-  </tbody>
+<tbody id="studentTableBody">
+
+</tbody>
 
 </table>
 
+</div>
 
 
 <script type="module">
 
-import { db, auth }
-
+import { db }
 from "./firebase.js";
-
 
 import {
 
-  collection,
-  getDocs,
-  deleteDoc,
-  doc,
-  updateDoc
+collection,
+getDocs,
+deleteDoc,
+doc,
+updateDoc
 
 }
 
 from
 
 "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-
-import {
-
-  onAuthStateChanged,
-  signOut
-
-}
-
-from
-
-"https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-
-
-
-onAuthStateChanged(auth,(user)=>{
-
-  if(!user){
-
-    window.location.href =
-    "login.html";
-
-  }
-
-});
-
 
 
 const tableBody =
@@ -392,323 +370,359 @@ document.getElementById(
 let allStudents = [];
 
 
+/* LOAD STUDENTS */
+
 async function loadStudents(){
 
-  tableBody.innerHTML = "";
+tableBody.innerHTML = "";
 
-  const querySnapshot =
+const querySnapshot =
 
-  await getDocs(
-    collection(db,"students")
-  );
+await getDocs(
+collection(db,"students")
+);
 
-  allStudents = [];
+allStudents = [];
 
-  querySnapshot.forEach((studentDoc)=>{
+querySnapshot.forEach((studentDoc)=>{
 
-    const student =
-    studentDoc.data();
+const student =
+studentDoc.data();
 
-    student.id =
-    studentDoc.id;
+student.id =
+studentDoc.id;
 
-    allStudents.push(student);
+allStudents.push(student);
 
-  });
+});
 
-  renderStudents(allStudents);
+renderStudents(allStudents);
 
-  totalStudents.innerText =
-  allStudents.length;
+totalStudents.innerText =
+allStudents.length;
 
 }
 
 
+/* RENDER TABLE */
 
 function renderStudents(students){
 
-  tableBody.innerHTML = "";
+tableBody.innerHTML = "";
 
-  students.forEach((student)=>{
+students.forEach((student)=>{
 
-    const status =
-    student.status || "Pending";
+const status =
+student.status || "Pending";
 
-    const row = `
+const paymentMode =
+student.paymentMode || "-";
 
-      <tr>
+const row = `
 
-        <td>${student.name || ""}</td>
+<tr>
 
-        <td>${student.fatherName || ""}</td>
+<td>
+${student.name || ""}
+</td>
 
-        <td>${student.phone || ""}</td>
+<td>
+${student.fatherName || ""}
+</td>
 
-        <td>${student.course || ""}</td>
+<td>
+${student.phone || ""}
+</td>
 
-        <td>${student.batch || ""}</td>
+<td>
+${student.course || ""}
+</td>
 
-        <td>
+<td>
+₹ ${student.fees || "0"}
+</td>
 
-          <span class="status
-          ${status === "Paid"
-          ? "paid"
-          : "pending"}">
+<td>
 
-            ${status}
+<span class="payment-badge">
 
-          </span>
+${paymentMode}
 
-        </td>
+</span>
 
-        <td>
+</td>
 
-          <button
-          class="btn edit-btn"
-          onclick="editStudent('${student.id}')">
+<td>
 
-            Edit
+<span class="status
+${status === "Paid"
+? "paid"
+: "pending"}">
 
-          </button>
+${status}
 
-          <button
-          class="btn delete-btn"
-          onclick="deleteStudent('${student.id}')">
+</span>
 
-            Delete
+</td>
 
-          </button>
+<td>
 
-          <button
-           class="btn receipt-btn"
-           onclick="generateReceipt('${student.id}')">
-           Receipt
-         </button>
+<button
+class="btn edit-btn"
+onclick="editStudent('${student.id}')">
 
-        </td>
+Edit
 
-      </tr>
+</button>
 
-    `;
+<button
+class="btn delete-btn"
+onclick="deleteStudent('${student.id}')">
 
-    tableBody.innerHTML += row;
+Delete
 
-  });
+</button>
+
+<button
+class="btn receipt-btn"
+onclick="generateReceipt('${student.id}')">
+
+Receipt
+
+</button>
+
+</td>
+
+</tr>
+
+`;
+
+tableBody.innerHTML += row;
+
+});
 
 }
 
 
+/* DELETE */
 
 window.deleteStudent =
 async function(id){
 
-  const confirmDelete =
-  confirm(
-    "Delete this student?"
-  );
+const confirmDelete =
+confirm(
+"Delete this student?"
+);
 
-  if(!confirmDelete) return;
+if(!confirmDelete) return;
 
-  try{
+try{
 
-    await deleteDoc(
-      doc(db,"students",id)
-    );
+await deleteDoc(
+doc(db,"students",id)
+);
 
-    alert(
-      "Student Deleted Successfully"
-    );
+alert(
+"Student Deleted Successfully"
+);
 
-    loadStudents();
+loadStudents();
 
-  }
+}
 
-  catch(error){
+catch(error){
 
-    console.error(error);
+console.error(error);
 
-    alert(
-      "Error deleting student"
-    );
+alert(
+"Error deleting student"
+);
 
-  }
+}
 
 }
 
 
+/* EDIT */
 
 window.editStudent =
 async function(id){
 
-  const student =
-  allStudents.find(
-    s => s.id === id
-  );
+const student =
+allStudents.find(
+s => s.id === id
+);
 
-  const newName =
-  prompt(
-    "Student Name",
-    student.name
-  );
+const newName =
+prompt(
+"Student Name",
+student.name || ""
+);
 
-  if(newName === null) return;
+if(newName === null) return;
 
-  const newFatherName =
-  prompt(
-    "Father Name",
-    student.fatherName
-  );
+const newFatherName =
+prompt(
+"Father Name",
+student.fatherName || ""
+);
 
-  if(newFatherName === null) return;
+if(newFatherName === null) return;
 
-  const newPhone =
-  prompt(
-    "Phone Number",
-    student.phone
-  );
+const newPhone =
+prompt(
+"Phone Number",
+student.phone || ""
+);
 
-  if(newPhone === null) return;
+if(newPhone === null) return;
 
-  const newStatus =
-  prompt(
-    "Status: Paid or Pending",
-    student.status || "Pending"
-  );
+const newFees =
+prompt(
+"Course Fees",
+student.fees || ""
+);
 
-  if(newStatus === null) return;
+if(newFees === null) return;
 
-  try{
 
-    await updateDoc(
+/* PAYMENT MODE */
 
-      doc(db,"students",id),
+const paymentMode =
+prompt(
+"Payment Mode: Cash or UPI",
+student.paymentMode || ""
+);
 
-      {
+if(paymentMode === null) return;
 
-        name:newName,
 
-        fatherName:newFatherName,
+/* STATUS */
 
-        phone:newPhone,
+const newStatus =
+prompt(
+"Status: Paid or Pending",
+student.status || "Pending"
+);
 
-        status:newStatus,
+if(newStatus === null) return;
 
-        course:student.course,
 
-        batch:student.batch,
+try{
 
-        email:student.email,
+await updateDoc(
 
-        address:student.address,
+doc(db,"students",id),
 
-        notes:student.notes
+{
 
-      }
+name:newName,
 
-    );
+fatherName:newFatherName,
 
-    alert(
-      "Student Updated Successfully"
-    );
+phone:newPhone,
 
-    loadStudents();
+fees:newFees,
 
-  }
+paymentMode:paymentMode,
 
-  catch(error){
+status:newStatus,
 
-    console.error(error);
+course:student.course,
 
-    alert(
-      "Error Updating Student"
-    );
+batch:student.batch,
 
-  }
+email:student.email,
+
+address:student.address,
+
+notes:student.notes
+
+}
+
+);
+
+alert(
+"Student Updated Successfully"
+);
+
+loadStudents();
+
+}
+
+catch(error){
+
+console.error(error);
+
+alert(
+"Error Updating Student"
+);
+
+}
 
 }
 
 
+/* SEARCH */
 
 document
 .getElementById("searchInput")
 
 .addEventListener("input",function(){
 
-  const value =
+const value =
 
-  this.value.toLowerCase();
+this.value.toLowerCase();
 
-  const filtered =
+const filtered =
 
-  allStudents.filter((student)=>{
+allStudents.filter((student)=>{
 
-    return (
+return (
 
-      (student.name || "")
-      .toLowerCase()
-      .includes(value)
+(student.name || "")
+.toLowerCase()
+.includes(value)
 
-      ||
+||
 
-      (student.phone || "")
-      .toLowerCase()
-      .includes(value)
+(student.phone || "")
+.toLowerCase()
+.includes(value)
 
-    );
+);
 
-  });
+});
 
-  renderStudents(filtered);
+renderStudents(filtered);
 
 });
 
 
+/* RECEIPT */
 
-document
-.getElementById("logoutBtn")
+window.generateReceipt =
+function(id){
 
-.addEventListener("click",
+const student =
+allStudents.find(
+s => s.id === id
+);
 
-async ()=>{
+localStorage.setItem(
+"receiptStudent",
+JSON.stringify(student)
+);
 
-  try{
-
-    await signOut(auth);
-
-    alert(
-      "Logged Out Successfully"
-    );
-
-    window.location.href =
-    "login.html";
-
-  }
-
-  catch(error){
-
-    console.error(error);
-
-    alert(
-      "Error Logging Out"
-    );
-
-  }
-
-});
-
-window.generateReceipt = function(id){
-
-  localStorage.setItem(
-    "receiptStudentId",
-    id
-  );
-
-  window.open(
-    "receipt.html",
-    "_blank"
-  );
+window.open(
+"receipt.html",
+"_blank"
+);
 
 }
+
+
+/* START */
 
 loadStudents();
 

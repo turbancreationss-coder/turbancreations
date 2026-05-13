@@ -202,7 +202,12 @@
       background:#dc3545;
 
     }
+    
+     .receipt-btn{
 
+  background:#ff7a00;
+
+     }
     .status{
 
       padding:7px 14px;
@@ -474,6 +479,12 @@ function renderStudents(students){
 
           </button>
 
+          <button
+           class="btn receipt-btn"
+           onclick="generateReceipt('${student.id}')">
+           Receipt
+         </button>
+
         </td>
 
       </tr>
@@ -685,7 +696,19 @@ async ()=>{
 
 });
 
+window.generateReceipt = function(id){
 
+  localStorage.setItem(
+    "receiptStudentId",
+    id
+  );
+
+  window.open(
+    "receipt.html",
+    "_blank"
+  );
+
+}
 
 loadStudents();
 

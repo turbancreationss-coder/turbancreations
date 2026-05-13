@@ -1,69 +1,371 @@
-<div class="receipt-body">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TurbanCreations Receipt</title>
 
-  <!-- LEFT SIDE -->
-  <div class="left-section">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <div class="section-title">PAYMENT DETAILS</div>
+<style>
 
-    <table>
-      <tbody id="receiptTable"></tbody>
-    </table>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-    <div class="payment-section">
+body{
+  font-family:Arial,sans-serif;
+  background:#ececec;
+  padding:15px;
+}
 
-      <div class="payment-left">
+/* MAIN RECEIPT */
+.receipt{
+  width:210mm;
+  min-height:297mm;
+  margin:auto;
+  background:white;
+  border:2px solid #ff9800;
+  padding:15px;
+}
 
-        <div class="payment-row">
-          <label>Payment Mode</label>
-          <div>
-            <input type="checkbox" checked> Cash
-            &nbsp;&nbsp;
-            <input type="checkbox"> UPI
-          </div>
-        </div>
+/* HEADER */
+.top-header{
+  background:#111;
+  color:white;
+  border-radius:10px;
+  padding:12px 18px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
 
-        <div class="payment-row">
-          <label>Transaction ID</label>
-          <div>TXN123456</div>
-        </div>
+.logo-section{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
 
-        <div class="payment-row">
-          <label>Batch Timing</label>
-          <div>Morning Batch</div>
-        </div>
+.logo-section img{
+  width:60px;
+  height:60px;
+  border-radius:50%;
+}
 
-        <div class="notes">
-          <h3>Important Notes</h3>
-          <ul>
-            <li>Fees once paid are non-refundable.</li>
-            <li>Limited seats available.</li>
-            <li>Keep this receipt safe for future reference.</li>
-            <li>Training timings may vary on special occasions.</li>
-          </ul>
-        </div>
+.logo-text h1{
+  font-size:26px;
+  color:#ff9800;
+  line-height:28px;
+}
 
+.logo-text p{
+  font-size:12px;
+}
+
+.receipt-title h1{
+  font-size:34px;
+}
+
+.receipt-title h2{
+  color:#ff9800;
+}
+
+/* INFO */
+.top-info{
+  display:flex;
+  justify-content:space-between;
+  margin-top:12px;
+}
+
+.left-info p{
+  font-size:14px;
+  margin-bottom:6px;
+}
+
+.left-info i{
+  color:#ff9800;
+  width:18px;
+}
+
+/* RIGHT BOX */
+.right-info{
+  border:2px solid #ff9800;
+  padding:10px;
+  border-radius:10px;
+  font-size:14px;
+  font-weight:bold;
+}
+
+/* SECTION TITLE */
+.section-title{
+  background:#ff9800;
+  display:inline-block;
+  padding:6px 12px;
+  margin:12px 0 8px;
+  font-weight:bold;
+  border-radius:5px;
+}
+
+/* FORM */
+.form-row{
+  display:flex;
+  margin-bottom:6px;
+}
+
+.form-row label{
+  width:140px;
+  font-weight:bold;
+}
+
+.line{
+  border-bottom:1px solid #444;
+  flex:1;
+  padding-left:8px;
+}
+
+/* RECEIPT BODY */
+.receipt-body{
+  display:flex;
+  gap:15px;
+  margin-top:10px;
+}
+
+.left-section{
+  width:70%;
+}
+
+.right-section{
+  width:30%;
+  border-left:2px dashed #ff9800;
+  padding-left:10px;
+  text-align:center;
+}
+
+/* TABLE */
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+table th, table td{
+  border:1px solid #444;
+  padding:8px;
+  font-size:13px;
+}
+
+table th{
+  background:#ff9800;
+}
+
+/* PAYMENT ROW */
+.payment-row{
+  display:flex;
+  margin-top:6px;
+  font-size:14px;
+}
+
+.payment-row label{
+  width:140px;
+  font-weight:bold;
+}
+
+/* NOTES */
+.notes{
+  margin-top:10px;
+  background:#fafafa;
+  padding:10px;
+  border-radius:10px;
+  border:1px solid #ddd;
+}
+
+.notes h3{
+  color:#ff9800;
+}
+
+/* QR + STAMP */
+.qr-img{
+  width:120px;
+  margin-top:10px;
+}
+
+.stamp-img{
+  width:90px;
+  margin-top:15px;
+}
+
+.signature{
+  margin-top:10px;
+  font-weight:bold;
+}
+
+/* FOOTER BAR */
+.footer-bar{
+  margin-top:15px;
+  background:#ff9800;
+  text-align:center;
+  padding:10px;
+  font-weight:bold;
+  border-radius:8px;
+}
+
+/* PRINT */
+.print-btn{
+  position:fixed;
+  right:15px;
+  top:15px;
+  background:#ff9800;
+  border:none;
+  padding:10px 15px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+@media print{
+  .print-btn{
+    display:none;
+  }
+  body{
+    background:white;
+    padding:0;
+  }
+  .receipt{
+    border:none;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<button class="print-btn" onclick="window.print()">Print</button>
+
+<div class="receipt">
+
+  <!-- HEADER -->
+  <div class="top-header">
+    <div class="logo-section">
+      <img src="images/logo.jpg">
+      <div class="logo-text">
+        <h1>TURBAN<br>CREATIONS</h1>
+        <p>PROFESSIONAL TURBAN TRAINING</p>
       </div>
+    </div>
+
+    <div class="receipt-title">
+      <h2>TRAINING RECEIPT</h2>
+      <h1>RECEIPT</h1>
+    </div>
+  </div>
+
+  <!-- INFO -->
+  <div class="top-info">
+    <div class="left-info">
+      <p><i class="fas fa-location-dot"></i> Ludhiana, Punjab</p>
+      <p><i class="fas fa-phone"></i> +91 9876366903</p>
+      <p><i class="fab fa-instagram"></i> @turbancreations_</p>
+      <p><i class="fab fa-youtube"></i> @turbancreationss</p>
+    </div>
+
+    <div class="right-info" id="receiptInfo"></div>
+  </div>
+
+  <!-- STUDENT -->
+  <div class="section-title">STUDENT DETAILS</div>
+
+  <div class="form-row"><label>Name</label><div class="line" id="name"></div></div>
+  <div class="form-row"><label>Father</label><div class="line" id="father"></div></div>
+  <div class="form-row"><label>Phone</label><div class="line" id="phone"></div></div>
+  <div class="form-row"><label>Address</label><div class="line" id="address"></div></div>
+
+  <!-- PAYMENT -->
+  <div class="receipt-body">
+
+    <div class="left-section">
+
+      <div class="section-title">PAYMENT</div>
+
+      <table>
+        <tbody id="table"></tbody>
+      </table>
+
+      <div class="payment-row">
+        <label>Mode</label>
+        <div id="mode"></div>
+      </div>
+
+      <div class="notes">
+        <h3>Important Notes</h3>
+        <ul>
+          <li>Fees are non-refundable</li>
+          <li>Keep receipt safe</li>
+          <li>Timing may vary</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- QR -->
+    <div class="right-section">
+
+      <h4 style="color:#ff9800;">SCAN</h4>
+      <img src="images/qr.jpeg" class="qr-img">
+
+      <h4 style="color:#ff9800;margin-top:10px;">STAMP</h4>
+      <img src="images/stamp.jpeg" class="stamp-img">
+
+      <div class="signature">Authorized Signature</div>
 
     </div>
 
   </div>
 
-  <!-- RIGHT SIDE -->
-  <div class="right-section">
-
-    <div class="block-title">SCAN TO PAY</div>
-    <img src="images/qr.jpeg" class="qr-img">
-
-    <div class="block-title">OFFICIAL STAMP</div>
-    <img src="images/stamp.jpeg" class="stamp-img">
-
-    <div class="signature">Authorized Signature</div>
-
+  <!-- FOOTER -->
+  <div class="footer-bar">
+    THANK YOU FOR TRUSTING TURBAN CREATIONS
   </div>
 
 </div>
 
-<!-- FOOTER BAR -->
-<div class="footer-bar">
-  THANK YOU FOR CHOOSING TURBAN CREATIONS • WE APPRECIATE YOUR TRUST
-</div>
+<script>
+
+const student = JSON.parse(localStorage.getItem("receiptStudent")) || {};
+
+/* SAFE FILL */
+document.getElementById("name").innerText = student.name || "";
+document.getElementById("father").innerText = student.fatherName || "";
+document.getElementById("phone").innerText = student.phone || "";
+document.getElementById("address").innerText = student.address || "";
+
+/* TABLE */
+document.getElementById("table").innerHTML = `
+<tr>
+<td>${student.course || ""}</td>
+<td>₹ ${student.fees || 0}</td>
+</tr>
+<tr>
+<td><b>Total</b></td>
+<td><b>₹ ${student.fees || 0}</b></td>
+</tr>
+`;
+
+/* MODE */
+document.getElementById("mode").innerHTML = `
+<input type="checkbox" ${student.paymentMode === "Cash" ? "checked" : ""}> Cash
+&nbsp;&nbsp;
+<input type="checkbox" ${student.paymentMode === "UPI" ? "checked" : ""}> UPI
+`;
+
+/* RECEIPT INFO */
+document.getElementById("receiptInfo").innerHTML = `
+<p>Receipt No: TC-${Date.now().toString().slice(-6)}</p>
+<p>Date: ${new Date().toLocaleDateString()}</p>
+<p>Status: ${student.status || "Paid"}</p>
+`;
+
+</script>
+
+</body>
+</html>

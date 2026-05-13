@@ -40,7 +40,7 @@ body{
   align-items:center;
   background:#111;
   color:white;
-  padding:12px 15px;
+  padding:12px;
   border-radius:8px;
 }
 
@@ -91,8 +91,8 @@ body{
 .info-box{
   border:2px solid #ff9800;
   padding:10px;
-  font-size:13px;
   border-radius:8px;
+  font-size:13px;
 }
 
 /* SECTION TITLE */
@@ -125,17 +125,10 @@ body{
   padding-left:5px;
 }
 
-/* MAIN BODY */
+/* MAIN */
 .main{
-  display:flex;
-  margin-top:12px;
-  gap:15px;
   flex:1;
-}
-
-/* LEFT */
-.left{
-  width:70%;
+  margin-top:12px;
 }
 
 /* TABLE */
@@ -147,7 +140,6 @@ table{
 
 table th{
   background:#ff9800;
-  color:black;
   padding:8px;
   font-size:13px;
 }
@@ -158,56 +150,62 @@ table td{
   font-size:13px;
 }
 
-/* PAYMENT */
-.payment{
-  margin-top:10px;
+/* DOTED LINE */
+.separator{
+  border-top:2px dotted #999;
+  margin:12px 0;
+}
+
+/* BOTTOM SECTION */
+.bottom-section{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:10px;
+}
+
+.bottom-box{
+  width:32%;
+  text-align:center;
+}
+
+.bottom-title{
+  font-weight:bold;
+  color:#ff9800;
   font-size:13px;
 }
 
-.payment div{
-  margin-top:5px;
+.bottom-box img{
+  width:110px;
+  margin-top:6px;
+}
+
+.sign-img{
+  width:130px;
 }
 
 /* NOTES */
 .notes{
-  margin-top:10px;
+  margin-top:12px;
+  background:#fafafa;
   border:1px solid #ddd;
   padding:10px;
-  background:#fafafa;
   border-radius:8px;
 }
 
 .notes h3{
   color:#ff9800;
-  margin-bottom:5px;
+  margin-bottom:6px;
+  font-size:15px;
 }
 
-/* RIGHT SIDE */
-.right{
-  width:30%;
-  border-left:2px dashed #ff9800;
-  padding-left:10px;
-  text-align:center;
+.notes ol{
+  padding-left:18px;
+  font-size:13px;
 }
 
-.right h4{
-  color:#ff9800;
-  margin-top:8px;
-}
-
-.qr{
-  width:120px;
-  margin-top:5px;
-}
-
-.stamp{
-  width:90px;
-  margin-top:10px;
-}
-
-.sign{
-  margin-top:10px;
-  font-weight:bold;
+.notes li{
+  margin-bottom:4px;
 }
 
 /* FOOTER */
@@ -233,16 +231,9 @@ table td{
 }
 
 @media print{
-  .print-btn{
-    display:none;
-  }
-  body{
-    background:white;
-    padding:0;
-  }
-  .receipt{
-    border:none;
-  }
+  .print-btn{display:none;}
+  body{background:white; padding:0;}
+  .receipt{border:none;}
 }
 
 </style>
@@ -296,36 +287,50 @@ table td{
   <!-- MAIN -->
   <div class="main">
 
-    <!-- LEFT -->
-    <div class="left">
+    <div class="section">PAYMENT DETAILS</div>
 
-      <div class="section">PAYMENT DETAILS</div>
+    <table>
+      <tbody id="table"></tbody>
+    </table>
 
-      <table>
-        <tbody id="table"></tbody>
-      </table>
+    <!-- SEPARATOR -->
+    <div class="separator"></div>
 
-      <div class="payment" id="paymentMode"></div>
+    <!-- QR + STAMP + SIGN -->
+    <div class="bottom-section">
 
-      <div class="notes">
-        <h3>Important Notes</h3>
-        <p>• Fees once paid are non-refundable</p>
-        <p>• Keep receipt for future reference</p>
-        <p>• Training schedule may change</p>
+      <div class="bottom-box">
+        <div class="bottom-title">SCAN</div>
+        <img src="images/qr.jpeg">
+      </div>
+
+      <div class="bottom-box">
+        <div class="bottom-title">STAMP</div>
+        <img src="images/stamp.jpeg">
+      </div>
+
+      <div class="bottom-box">
+        <div class="bottom-title">SIGNATURE</div>
+        <img src="images/sign.jpeg" class="sign-img">
       </div>
 
     </div>
 
-    <!-- RIGHT -->
-    <div class="right">
+    <!-- NOTES -->
+    <div class="notes">
 
-      <h4>SCAN TO PAY</h4>
-      <img src="images/qr.jpeg" class="qr">
+      <h3>Important Notes for Receipt</h3>
 
-      <h4>STAMP</h4>
-      <img src="images/stamp.jpeg" class="stamp">
-
-      <div class="sign">Authorized Signature</div>
+      <ol>
+        <li>Fees once paid are non-refundable and non-transferable.</li>
+        <li>Payment confirms your seat in the Turban Training Class.</li>
+        <li>Students must bring and keep their receipt for entry and verification.</li>
+        <li>Class timings and schedule must be strictly followed. Missed classes will not be adjusted or compensated.</li>
+        <li>Management reserves the right to change batch timing, schedule, or class structure if required.</li>
+        <li>Discipline, punctuality, and respectful behavior are mandatory during training.</li>
+        <li>Certificate (if applicable) will be issued only after successful completion of the course.</li>
+        <li>In case of any dispute, management decision will be final.</li>
+      </ol>
 
     </div>
 
@@ -342,7 +347,7 @@ table td{
 
 const student = JSON.parse(localStorage.getItem("receiptStudent")) || {};
 
-/* SAFE DATA */
+/* DATA */
 document.getElementById("name").innerText = student.name || "";
 document.getElementById("father").innerText = student.fatherName || "";
 document.getElementById("phone").innerText = student.phone || "";
@@ -362,12 +367,6 @@ document.getElementById("table").innerHTML = `
 <td><b>Total</b></td>
 <td><b>₹${student.fees || 0}</b></td>
 </tr>
-`;
-
-/* PAYMENT */
-document.getElementById("paymentMode").innerHTML = `
-<b>Payment Mode:</b>
-${student.paymentMode || "Cash"}
 `;
 
 /* INFO BOX */

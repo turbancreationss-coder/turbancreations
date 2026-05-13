@@ -18,7 +18,7 @@ document.getElementById("studentForm");
 
 form.addEventListener("submit",
 
-async (e)=>{
+async (e) => {
 
   e.preventDefault();
 
@@ -56,11 +56,11 @@ async (e)=>{
   };
 
 
-  try{
+  try {
 
     await addDoc(
 
-      collection(db,"students"),
+      collection(db, "students"),
 
       studentData
 
@@ -74,7 +74,7 @@ async (e)=>{
 
   }
 
-  catch(error){
+  catch (error) {
 
     console.error(error);
 

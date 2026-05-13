@@ -8,7 +8,7 @@
   <meta name="viewport"
   content="width=device-width, initial-scale=1.0">
 
-  <title>Admin Panel</title>
+  <title>TurbanCreations Admin Panel</title>
 
   <style>
 
@@ -19,30 +19,34 @@
     }
 
     body{
-      font-family:Arial;
+
+      font-family:Arial,sans-serif;
+
       background:#f5f5f5;
+
       padding:30px;
+
     }
 
     h1{
+
       text-align:center;
-      margin-bottom:25px;
-      color:#222;
+
+      margin-bottom:30px;
+
+      color:#111;
+
     }
 
     .top-bar{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:20px;
-      flex-wrap:wrap;
+
       margin-bottom:25px;
+
     }
 
     #searchInput{
 
-      flex:1;
-      min-width:250px;
+      width:100%;
 
       padding:14px;
 
@@ -77,20 +81,28 @@
 
       border-radius:15px;
 
-      box-shadow:0 3px 12px rgba(0,0,0,0.1);
+      box-shadow:0 3px 10px rgba(0,0,0,0.1);
 
     }
 
     .card h2{
+
       font-size:18px;
+
       margin-bottom:10px;
-      color:#555;
+
+      color:#666;
+
     }
 
     .card p{
-      font-size:32px;
+
+      font-size:34px;
+
       font-weight:bold;
+
       color:#111;
+
     }
 
     table{
@@ -105,13 +117,13 @@
 
       overflow:hidden;
 
-      box-shadow:0 3px 12px rgba(0,0,0,0.1);
+      box-shadow:0 3px 10px rgba(0,0,0,0.1);
 
     }
 
     th{
 
-      background:black;
+      background:#111;
 
       color:white;
 
@@ -130,20 +142,22 @@
     }
 
     tr:hover{
+
       background:#f9f9f9;
+
     }
 
     .btn{
 
-      padding:10px 14px;
-
       border:none;
+
+      padding:10px 14px;
 
       border-radius:8px;
 
-      cursor:pointer;
-
       color:white;
+
+      cursor:pointer;
 
       font-weight:bold;
 
@@ -151,48 +165,62 @@
 
     }
 
-    .delete-btn{
-      background:red;
+    .edit-btn{
+
+      background:#0d6efd;
+
     }
 
-    .edit-btn{
-      background:#0d6efd;
+    .delete-btn{
+
+      background:#dc3545;
+
     }
 
     .status{
 
-      padding:6px 14px;
+      padding:7px 14px;
 
       border-radius:30px;
+
+      color:white;
 
       font-size:13px;
 
       font-weight:bold;
 
-      color:white;
-
     }
 
     .paid{
+
       background:green;
+
     }
 
     .pending{
+
       background:orange;
+
     }
 
     @media(max-width:768px){
 
       body{
+
         padding:15px;
+
       }
 
       table{
+
         font-size:14px;
+
       }
 
       th,td{
+
         padding:10px;
+
       }
 
     }
@@ -203,70 +231,64 @@
 
 <body>
 
-  <h1>TurbanCreations Admin Panel</h1>
-
-  <div class="top-bar">
-
-    <input
-    type="text"
-    id="searchInput"
-    placeholder="Search student by name or phone">
-
-  </div>
+<h1>TurbanCreations Admin Panel</h1>
 
 
-  <div class="stats">
+<div class="top-bar">
 
-    <div class="card">
-      <h2>Total Students</h2>
-      <p id="totalStudents">0</p>
-    </div>
+  <input
+  type="text"
+  id="searchInput"
+  placeholder="Search student by name or phone">
 
-    <div class="card">
-      <h2>Total Revenue</h2>
-      <p id="totalRevenue">₹0</p>
-    </div>
+</div>
 
-    <div class="card">
-      <h2>Paid Students</h2>
-      <p id="paidStudents">0</p>
-    </div>
 
-    <div class="card">
-      <h2>Pending Fees</h2>
-      <p id="pendingStudents">0</p>
-    </div>
+<div class="stats">
+
+  <div class="card">
+
+    <h2>Total Students</h2>
+
+    <p id="totalStudents">0</p>
 
   </div>
 
+</div>
 
-  <table>
 
-    <thead>
+<table>
 
-      <tr>
+  <thead>
 
-        <th>Name</th>
+    <tr>
 
-        <th>Phone</th>
+      <th>Student Name</th>
 
-        <th>Course</th>
+      <th>Father Name</th>
 
-        <th>Fees</th>
+      <th>Phone</th>
 
-        <th>Status</th>
+      <th>Course</th>
 
-        <th>Delete</th>
+      <th>Batch</th>
 
-      </tr>
+      <th>Status</th>
 
-    </thead>
+      <th>Actions</th>
 
-    <tbody id="studentTableBody">
+    </tr>
 
-    </tbody>
+  </thead>
 
-  </table>
+  <tbody id="studentTableBody">
+
+  </tbody>
+
+</table>
+
+
+
 <script type="module">
 
 import { db }
@@ -297,22 +319,6 @@ document.getElementById(
 "totalStudents"
 );
 
-const totalRevenue =
-document.getElementById(
-"totalRevenue"
-);
-
-const paidStudents =
-document.getElementById(
-"paidStudents"
-);
-
-const pendingStudents =
-document.getElementById(
-"pendingStudents"
-);
-
-
 let allStudents = [];
 
 
@@ -325,14 +331,6 @@ async function loadStudents(){
   await getDocs(
     collection(db,"students")
   );
-
-  let total = 0;
-
-  let revenue = 0;
-
-  let paid = 0;
-
-  let pending = 0;
 
   allStudents = [];
 
@@ -350,36 +348,8 @@ async function loadStudents(){
 
   renderStudents(allStudents);
 
-  allStudents.forEach((student)=>{
-
-    total++;
-
-    revenue +=
-    Number(student.fees || 0);
-
-    if(student.status === "Pending"){
-
-      pending++;
-
-    }else{
-
-      paid++;
-
-    }
-
-  });
-
   totalStudents.innerText =
-  total;
-
-  totalRevenue.innerText =
-  `₹${revenue}`;
-
-  paidStudents.innerText =
-  paid;
-
-  pendingStudents.innerText =
-  pending;
+  allStudents.length;
 
 }
 
@@ -392,19 +362,21 @@ function renderStudents(students){
   students.forEach((student)=>{
 
     const status =
-    student.status || "Paid";
+    student.status || "Pending";
 
     const row = `
 
       <tr>
 
-        <td>${student.name}</td>
+        <td>${student.name || ""}</td>
 
-        <td>${student.phone}</td>
+        <td>${student.fatherName || ""}</td>
 
-        <td>${student.course}</td>
+        <td>${student.phone || ""}</td>
 
-        <td>₹${student.fees}</td>
+        <td>${student.course || ""}</td>
+
+        <td>${student.batch || ""}</td>
 
         <td>
 
@@ -461,11 +433,29 @@ async function(id){
 
   if(!confirmDelete) return;
 
-  await deleteDoc(
-    doc(db,"students",id)
-  );
+  try{
 
-  loadStudents();
+    await deleteDoc(
+      doc(db,"students",id)
+    );
+
+    alert(
+      "Student Deleted Successfully"
+    );
+
+    loadStudents();
+
+  }
+
+  catch(error){
+
+    console.error(error);
+
+    alert(
+      "Error deleting student"
+    );
+
+  }
 
 }
 
@@ -481,32 +471,32 @@ async function(id){
 
   const newName =
   prompt(
-    "Enter New Name",
+    "Student Name",
     student.name
   );
 
   if(newName === null) return;
 
+  const newFatherName =
+  prompt(
+    "Father Name",
+    student.fatherName
+  );
+
+  if(newFatherName === null) return;
+
   const newPhone =
   prompt(
-    "Enter New Phone",
+    "Phone Number",
     student.phone
   );
 
   if(newPhone === null) return;
 
-  const newFees =
-  prompt(
-    "Enter New Fees",
-    student.fees
-  );
-
-  if(newFees === null) return;
-
   const newStatus =
   prompt(
-    "Enter Status: Paid or Pending",
-    student.status || "Paid"
+    "Status: Paid or Pending",
+    student.status || "Pending"
   );
 
   if(newStatus === null) return;
@@ -521,13 +511,15 @@ async function(id){
 
         name:newName,
 
-        phone:newPhone,
+        fatherName:newFatherName,
 
-        fees:newFees,
+        phone:newPhone,
 
         status:newStatus,
 
         course:student.course,
+
+        batch:student.batch,
 
         email:student.email,
 
@@ -559,6 +551,8 @@ async function(id){
 
 }
 
+
+
 document
 .getElementById("searchInput")
 
@@ -574,13 +568,13 @@ document
 
     return (
 
-      student.name
+      (student.name || "")
       .toLowerCase()
       .includes(value)
 
       ||
 
-      student.phone
+      (student.phone || "")
       .toLowerCase()
       .includes(value)
 
@@ -596,5 +590,6 @@ document
 loadStudents();
 
 </script>
+
 </body>
 </html>

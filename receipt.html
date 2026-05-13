@@ -1,11 +1,13 @@
-# Turban Creations Receipt Template (HTML)
-
-```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
 <title>Turban Creations Receipt</title>
 
 <link rel="stylesheet"
@@ -133,13 +135,14 @@ body{
 }
 
 .field label{
-  width:180px;
+  width:200px;
   font-weight:bold;
 }
 
 .line{
   flex:1;
   border-bottom:2px solid #444;
+  padding-bottom:5px;
 }
 
 table{
@@ -229,6 +232,39 @@ td{
   font-size:24px;
 }
 
+.print-btn{
+  position:fixed;
+  top:20px;
+  right:20px;
+  background:#ff7a00;
+  color:black;
+  border:none;
+  padding:15px 25px;
+  border-radius:10px;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+  z-index:999;
+}
+
+.print-btn:hover{
+  background:black;
+  color:white;
+}
+
+@media print{
+
+  .print-btn{
+    display:none;
+  }
+
+  body{
+    background:white;
+    padding:0;
+  }
+
+}
+
 @media(max-width:768px){
 
   .info-grid,
@@ -252,208 +288,426 @@ td{
 }
 
 </style>
+
 </head>
 
 <body>
 
+<button
+class="print-btn"
+onclick="window.print()">
+Print Receipt
+</button>
+
 <div class="receipt">
 
-  <div class="top-header">
+<div class="top-header">
 
-    <div class="logo-box">
+<div class="logo-box">
 
-      <img src="images/logo.jpg">
+<img src="images/logo.jpg">
 
-      <div class="logo-text">
-        <h1><span>TURBAN</span><br>CREATIONS</h1>
-        <p>BY AJIT SINGH</p>
-      </div>
-
-    </div>
-
-    <div class="receipt-title">
-      <h2>TURBAN TRAINING CLASSES</h2>
-      <h1>RECEIPT</h1>
-    </div>
-
-  </div>
-
-
-  <div class="main-content">
-
-    <div class="info-grid">
-
-      <div class="contact-box">
-
-        <p><i class="fas fa-location-dot"></i> Ludhiana, Punjab</p>
-
-        <p><i class="fas fa-phone"></i> +91 9876366903</p>
-
-        <p><i class="fab fa-instagram"></i> @turbancreations_</p>
-
-        <p><i class="fab fa-facebook"></i> Turban Creations</p>
-
-        <p><i class="fas fa-globe"></i> turbancreations.netlify.app</p>
-
-      </div>
-
-
-      <div class="receipt-info">
-
-        <p>Receipt No. : TC/_______</p>
-
-        <p>Date : ____ / ____ / ______</p>
-
-      </div>
-
-    </div>
-
-
-    <div class="received-box">
-
-      <div class="section-title">
-        RECEIVED FROM
-      </div>
-
-
-      <div class="field">
-        <label>Name :</label>
-        <div class="line"></div>
-      </div>
-
-      <div class="field">
-        <label>Father Name :</label>
-        <div class="line"></div>
-      </div>
-
-      <div class="field">
-        <label>Mobile No :</label>
-        <div class="line"></div>
-      </div>
-
-      <div class="field">
-        <label>Address :</label>
-        <div class="line"></div>
-      </div>
-
-    </div>
-
-
-    <table>
-
-      <tr>
-        <th>DESCRIPTION</th>
-        <th>AMOUNT (₹)</th>
-      </tr>
-
-      <tr>
-        <td>
-          Course : ___________________<br><br>
-          Batch Time : ___________________<br><br>
-          Training Mode : ___________________<br><br>
-          Registration Fee
-        </td>
-
-        <td style="vertical-align:bottom;">
-          ₹ __________
-        </td>
-      </tr>
-
-      <tr>
-        <td>Discount (If Any)</td>
-        <td>₹ __________</td>
-      </tr>
-
-      <tr class="total">
-        <td>TOTAL AMOUNT PAID</td>
-        <td>₹ __________</td>
-      </tr>
-
-    </table>
-
-
-    <div class="payment-section">
-
-      <div class="section-title">
-        PAYMENT DETAILS
-      </div>
-
-
-      <div class="payment-grid">
-
-        <div>
-
-          <div class="field">
-            <label>Payment Mode :</label>
-            <div>
-              Cash &nbsp;&nbsp;
-              UPI &nbsp;&nbsp;
-              Bank Transfer
-            </div>
-          </div>
-
-          <div class="field">
-            <label>Transaction ID :</label>
-            <div class="line"></div>
-          </div>
-
-          <div class="field">
-            <label>Payment Date :</label>
-            <div class="line"></div>
-          </div>
-
-
-          <div class="notes">
-
-            <h3>Important Notes:</h3>
-
-            <ul>
-              <li>Limited Seats Available</li>
-              <li>Advance Registration Recommended</li>
-              <li>First Come, First Served</li>
-              <li>Fees Once Paid Will Not Be Refunded</li>
-            </ul>
-
-          </div>
-
-        </div>
-
-
-        <div>
-
-          <div class="qr-box">
-            <img src="images/qr.jpeg">
-            <h3>SCAN TO PAY</h3>
-          </div>
-
-
-          <div class="signature">
-
-            <img src="images/stamp.jpeg">
-
-            <h3>Authorized Signature</h3>
-
-            <p>Turban Creations</p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <div class="bottom-text">
-      Thank you for your trust in Turban Creations.
-      <span>
-        We wish you a successful learning journey!
-      </span>
-    </div>
-
-  </div>
+<div class="logo-text">
+<h1><span>TURBAN</span><br>CREATIONS</h1>
+<p>BY AJIT SINGH</p>
+</div>
 
 </div>
+
+<div class="receipt-title">
+<h2>TURBAN TRAINING CLASSES</h2>
+<h1>RECEIPT</h1>
+</div>
+
+</div>
+
+
+<div class="main-content">
+
+<div class="info-grid">
+
+<div class="contact-box">
+
+<p>
+<i class="fas fa-location-dot"></i>
+Ludhiana, Punjab
+</p>
+
+<p>
+<i class="fas fa-phone"></i>
++91 9876366903
+</p>
+
+<p>
+<i class="fab fa-instagram"></i>
+@turbancreations_
+</p>
+
+<p>
+<i class="fab fa-facebook"></i>
+Turban Creations
+</p>
+
+<p>
+<i class="fas fa-globe"></i>
+turbancreations.netlify.app
+</p>
+
+</div>
+
+
+<div class="receipt-info">
+
+<p>
+Receipt No. :
+TC/<span id="receiptNo"></span>
+</p>
+
+<p>
+Date :
+<span id="receiptDate"></span>
+</p>
+
+</div>
+
+</div>
+
+
+<div class="received-box">
+
+<div class="section-title">
+RECEIVED FROM
+</div>
+
+<div class="field">
+<label>Name :</label>
+<div class="line" id="studentName"></div>
+</div>
+
+<div class="field">
+<label>Father Name :</label>
+<div class="line" id="fatherName"></div>
+</div>
+
+<div class="field">
+<label>Mobile No :</label>
+<div class="line" id="phone"></div>
+</div>
+
+<div class="field">
+<label>Address :</label>
+<div class="line" id="address"></div>
+</div>
+
+</div>
+
+
+<table>
+
+<tr>
+<th>DESCRIPTION</th>
+<th>AMOUNT (₹)</th>
+</tr>
+
+<tr>
+
+<td>
+
+Course :
+<span id="course"></span>
+
+<br><br>
+
+Batch Time :
+<span id="batch"></span>
+
+<br><br>
+
+Training Mode :
+Offline
+
+<br><br>
+
+Registration Fee
+
+</td>
+
+<td style="vertical-align:bottom;">
+
+₹ <span id="amount"></span>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Discount (If Any)
+</td>
+
+<td>
+₹ 0
+</td>
+
+</tr>
+
+<tr class="total">
+
+<td>
+TOTAL AMOUNT PAID
+</td>
+
+<td>
+₹ <span id="totalAmount"></span>
+</td>
+
+</tr>
+
+</table>
+
+
+<div class="payment-section">
+
+<div class="section-title">
+PAYMENT DETAILS
+</div>
+
+
+<div class="payment-grid">
+
+<div>
+
+<div class="field">
+
+<label>Payment Mode :</label>
+
+<div>
+Cash / UPI / Bank Transfer
+</div>
+
+</div>
+
+
+<div class="field">
+
+<label>Transaction ID :</label>
+
+<div class="line"></div>
+
+</div>
+
+
+<div class="field">
+
+<label>Payment Date :</label>
+
+<div class="line" id="paymentDate"></div>
+
+</div>
+
+
+<div class="notes">
+
+<h3>Important Notes:</h3>
+
+<ul>
+
+<li>Limited Seats Available</li>
+
+<li>Advance Registration Recommended</li>
+
+<li>First Come, First Served</li>
+
+<li>Fees Once Paid Will Not Be Refunded</li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+<div>
+
+<div class="qr-box">
+
+<img src="images/qr.jpeg">
+
+<h3>SCAN TO PAY</h3>
+
+</div>
+
+
+<div class="signature">
+
+<img src="images/stamp.jpeg">
+
+<h3>Authorized Signature</h3>
+
+<p>Turban Creations</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="bottom-text">
+
+Thank you for your trust in Turban Creations.
+
+<span>
+We wish you a successful learning journey!
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script type="module">
+
+import { db }
+from "./firebase.js";
+
+import {
+doc,
+getDoc
+}
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+
+const studentId =
+localStorage.getItem(
+"receiptStudentId"
+);
+
+
+async function loadReceipt(){
+
+if(!studentId){
+
+alert("No Student Selected");
+
+return;
+
+}
+
+try{
+
+const studentRef =
+doc(db,"students",studentId);
+
+const studentSnap =
+await getDoc(studentRef);
+
+if(studentSnap.exists()){
+
+const student =
+studentSnap.data();
+
+
+document.getElementById(
+"studentName"
+).innerText =
+student.name || "";
+
+
+document.getElementById(
+"fatherName"
+).innerText =
+student.fatherName || "";
+
+
+document.getElementById(
+"phone"
+).innerText =
+student.phone || "";
+
+
+document.getElementById(
+"address"
+).innerText =
+student.address || "";
+
+
+document.getElementById(
+"course"
+).innerText =
+student.course || "";
+
+
+document.getElementById(
+"batch"
+).innerText =
+student.batch || "";
+
+
+document.getElementById(
+"amount"
+).innerText =
+student.amount || "0";
+
+
+document.getElementById(
+"totalAmount"
+).innerText =
+student.amount || "0";
+
+
+const today =
+new Date();
+
+const formattedDate =
+
+today.getDate() + "/" +
+
+(today.getMonth()+1) + "/" +
+
+today.getFullYear();
+
+
+document.getElementById(
+"receiptDate"
+).innerText =
+formattedDate;
+
+
+document.getElementById(
+"paymentDate"
+).innerText =
+formattedDate;
+
+
+document.getElementById(
+"receiptNo"
+).innerText =
+studentId.slice(0,6).toUpperCase();
+
+}
+
+}
+
+catch(error){
+
+console.error(error);
+
+alert("Error Loading Receipt");
+
+}
+
+}
+
+loadReceipt();
+
+</script>
 
 </body>
 </html>

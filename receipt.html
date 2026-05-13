@@ -1,51 +1,59 @@
+# receipt.html
+
+```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>Turban Creations Receipt</title>
+<title>TurbanCreations Receipt</title>
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
 body{
 
-  margin:0;
-
-  padding:20px;
-
-  background:#dcdcdc;
-
   font-family:Arial,sans-serif;
+
+  background:#e6e6e6;
+
+  padding:25px;
 
 }
 
 .receipt{
 
-  width:794px;
+  width:210mm;
 
-  min-height:1123px;
-
-  margin:auto;
+  min-height:297mm;
 
   background:white;
 
-  padding:25px;
+  margin:auto;
 
-  box-sizing:border-box;
+  overflow:hidden;
 
   border:2px solid #ff7a00;
 
 }
 
+/* TOP HEADER */
+
 .top-header{
+
+  background:black;
+
+  color:white;
 
   display:flex;
 
@@ -53,25 +61,21 @@ body{
 
   align-items:center;
 
-  background:black;
-
-  color:white;
-
-  padding:20px;
+  padding:25px 35px;
 
 }
 
-.logo-box{
+.logo-area{
 
   display:flex;
 
   align-items:center;
 
-  gap:15px;
+  gap:18px;
 
 }
 
-.logo-box img{
+.logo-area img{
 
   width:90px;
 
@@ -79,47 +83,53 @@ body{
 
 .logo-text h1{
 
-  margin:0;
-
   font-size:42px;
 
   line-height:42px;
 
 }
 
-.logo-text p{
-
-  margin:0;
+.logo-text span{
 
   color:#ff7a00;
 
-  font-weight:bold;
+}
+
+.logo-text p{
+
+  margin-top:6px;
+
+  color:#ddd;
+
+  font-size:15px;
 
 }
 
-.receipt-title{
+.receipt-heading{
 
   text-align:right;
 
 }
 
-.receipt-title h2{
-
-  margin:0;
+.receipt-heading h2{
 
   color:#ff7a00;
 
   font-size:28px;
 
-}
-
-.receipt-title h1{
-
-  margin:0;
-
-  font-size:58px;
+  margin-bottom:5px;
 
 }
+
+.receipt-heading h1{
+
+  font-size:62px;
+
+  line-height:60px;
+
+}
+
+/* CONTACT + RECEIPT INFO */
 
 .top-info{
 
@@ -127,9 +137,9 @@ body{
 
   justify-content:space-between;
 
-  margin-top:25px;
-
   gap:30px;
+
+  padding:30px 35px 10px;
 
 }
 
@@ -139,17 +149,33 @@ body{
 
 }
 
-.contact-box p{
+.contact-item{
 
-  margin:10px 0;
+  display:flex;
+
+  align-items:flex-start;
+
+  gap:14px;
+
+  margin-bottom:18px;
 
   font-size:18px;
 
 }
 
+.contact-item i{
+
+  color:#ff7a00;
+
+  font-size:20px;
+
+  margin-top:3px;
+
+}
+
 .receipt-box{
 
-  width:50%;
+  width:45%;
 
   border:2px solid #ff7a00;
 
@@ -163,45 +189,51 @@ body{
 
   font-size:22px;
 
-  margin:15px 0;
-
   font-weight:bold;
 
+  margin-bottom:18px;
+
 }
+
+/* SECTION TITLE */
 
 .section-title{
 
   background:#ff7a00;
 
-  color:black;
-
   display:inline-block;
 
-  padding:10px 20px;
+  padding:10px 22px;
+
+  font-size:22px;
 
   font-weight:bold;
 
-  margin-top:25px;
-
-  margin-bottom:15px;
-
-  font-size:24px;
+  margin:20px 35px;
 
 }
 
-.info-line{
+/* STUDENT DETAILS */
+
+.details{
+
+  padding:0 35px;
+
+}
+
+.detail-row{
 
   display:flex;
 
-  margin-bottom:14px;
+  margin-bottom:18px;
 
-  font-size:20px;
+  font-size:19px;
 
 }
 
-.info-line label{
+.detail-row label{
 
-  width:180px;
+  width:190px;
 
   font-weight:bold;
 
@@ -211,35 +243,43 @@ body{
 
   flex:1;
 
-  border-bottom:2px solid #777;
+  border-bottom:2px solid #666;
 
   padding-bottom:5px;
 
 }
 
-.table{
+/* TABLE */
+
+.table-wrap{
+
+  padding:20px 35px;
+
+}
+
+table{
 
   width:100%;
 
   border-collapse:collapse;
 
-  margin-top:20px;
-
 }
 
-.table th{
+th{
 
   background:#ff7a00;
 
-  padding:14px;
+  color:black;
 
-  text-align:left;
+  padding:14px;
 
   font-size:20px;
 
+  text-align:left;
+
 }
 
-.table td{
+td{
 
   border:1px solid #999;
 
@@ -249,21 +289,99 @@ body{
 
 }
 
+.total-row{
+
+  background:#fff5e9;
+
+  font-weight:bold;
+
+  font-size:22px;
+
+}
+
+/* PAYMENT SECTION */
+
 .payment-section{
 
   display:flex;
 
   justify-content:space-between;
 
-  margin-top:25px;
+  align-items:flex-start;
 
   gap:20px;
+
+  padding:0 35px 20px;
 
 }
 
 .left-payment{
 
   width:60%;
+
+}
+
+.payment-row{
+
+  display:flex;
+
+  margin-bottom:18px;
+
+  font-size:18px;
+
+}
+
+.payment-row label{
+
+  width:180px;
+
+  font-weight:bold;
+
+}
+
+.payment-line{
+
+  flex:1;
+
+  border-bottom:2px solid #777;
+
+  padding-bottom:5px;
+
+}
+
+.notes{
+
+  border:2px solid #ccc;
+
+  border-radius:12px;
+
+  padding:18px;
+
+  margin-top:20px;
+
+}
+
+.notes h3{
+
+  color:#ff7a00;
+
+  margin-bottom:10px;
+
+  font-size:24px;
+
+}
+
+.notes ul{
+
+  padding-left:20px;
+
+}
+
+.notes li{
+
+  margin-bottom:10px;
+
+  font-size:17px;
 
 }
 
@@ -277,11 +395,21 @@ body{
 
 .qr{
 
-  width:180px;
+  width:170px;
 
   border:2px solid black;
 
-  padding:8px;
+  padding:6px;
+
+}
+
+.scan-text{
+
+  font-size:18px;
+
+  font-weight:bold;
+
+  margin-top:10px;
 
 }
 
@@ -289,69 +417,55 @@ body{
 
   width:170px;
 
-  margin-top:25px;
-
-}
-
-.notes{
-
-  border:2px solid #ccc;
-
-  border-radius:10px;
-
-  padding:15px;
-
-  margin-top:20px;
-
-}
-
-.notes h3{
-
-  color:#ff7a00;
-
-  margin-top:0;
-
-}
-
-.notes li{
-
-  margin-bottom:10px;
-
-  font-size:17px;
+  margin-top:30px;
 
 }
 
 .signature{
 
-  margin-top:15px;
+  margin-top:10px;
 
   font-size:18px;
 
+  font-weight:bold;
+
 }
 
-.bottom-message{
+/* FOOTER */
+
+.footer-message{
 
   text-align:center;
 
-  margin-top:40px;
+  padding:10px 35px 35px;
 
 }
 
-.bottom-message h1{
+.footer-message h1{
+
+  font-size:40px;
 
   font-family:cursive;
-
-  font-size:52px;
 
   margin-bottom:10px;
 
 }
 
-.bottom-message p{
+.footer-message p{
 
   color:#ff7a00;
 
-  font-size:32px;
+  font-size:28px;
+
+}
+
+/* PRINT */
+
+@page{
+
+  size:A4;
+
+  margin:8mm;
 
 }
 
@@ -375,428 +489,279 @@ body{
 
   }
 
+  .print-btn{
+
+    display:none;
+
+  }
+
 }
+
+.print-btn{
+
+  position:fixed;
+
+  right:20px;
+
+  top:20px;
+
+  background:#ff7a00;
+
+  color:black;
+
+  border:none;
+
+  padding:14px 24px;
+
+  border-radius:10px;
+
+  font-size:16px;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+  z-index:999;
+
+}
+
 </style>
 
 </head>
 
 <body>
 
-<button
-class="print-btn"
-onclick="window.print()">
-Print Receipt
+<button class="print-btn" onclick="window.print()">
+  Print Receipt
 </button>
 
 <div class="receipt">
 
-<div class="top-header">
+  <div class="top-header">
 
-<div class="logo-box">
+    <div class="logo-area">
 
-<img src="images/logo.jpg">
+      <img src="images/logo.jpg">
 
-<div class="logo-text">
-<h1><span>TURBAN</span><br>CREATIONS</h1>
-<p>BY AJIT SINGH</p>
-</div>
+      <div class="logo-text">
+        <h1>
+          TURBAN<br>
+          <span>CREATIONS</span>
+        </h1>
 
-</div>
+        <p>
+          BY AJIT SINGH
+        </p>
+      </div>
 
-<div class="receipt-title">
-<h2>TURBAN TRAINING CLASSES</h2>
-<h1>RECEIPT</h1>
-</div>
+    </div>
 
-</div>
+    <div class="receipt-heading">
 
+      <h2>TURBAN TRAINING CLASSES</h2>
 
-<div class="main-content">
+      <h1>RECEIPT</h1>
 
-<div class="info-grid">
+    </div>
 
-<div class="contact-box">
+  </div>
 
-<p>
-<i class="fas fa-location-dot"></i>
-Ludhiana, Punjab
-</p>
 
-<p>
-<i class="fas fa-phone"></i>
-+91 9876366903
-</p>
+  <div class="top-info">
 
-<p>
-<i class="fab fa-instagram"></i>
-@turbancreations_
-</p>
+    <div class="contact-box">
 
-<p>
-<i class="fab fa-facebook"></i>
-Turban Creations
-</p>
+      <div class="contact-item">
+        <i class="fas fa-location-dot"></i>
+        <div>Ludhiana, Punjab</div>
+      </div>
 
-<p>
-<i class="fas fa-globe"></i>
-turbancreations.netlify.app
-</p>
+      <div class="contact-item">
+        <i class="fas fa-phone"></i>
+        <div>+91 9876366903</div>
+      </div>
 
-</div>
+      <div class="contact-item">
+        <i class="fab fa-instagram"></i>
+        <div>@turbancreations_</div>
+      </div>
 
+      <div class="contact-item">
+        <i class="fab fa-facebook"></i>
+        <div>Turban Creations</div>
+      </div>
 
-<div class="receipt-info">
+      <div class="contact-item">
+        <i class="fas fa-globe"></i>
+        <div>turbancreations.netlify.app</div>
+      </div>
 
-<p>
-Receipt No. :
-TC/<span id="receiptNo"></span>
-</p>
+    </div>
 
-<p>
-Date :
-<span id="receiptDate"></span>
-</p>
 
-</div>
+    <div class="receipt-box">
 
-</div>
+      <p>
+        Receipt No : TC/001
+      </p>
 
+      <p>
+        Receipt Date : 13/05/2026
+      </p>
 
-<div class="received-box">
+    </div>
 
-<div class="section-title">
-RECEIVED FROM
-</div>
+  </div>
 
-<div class="field">
-<label>Name :</label>
-<div class="line" id="studentName"></div>
-</div>
 
-<div class="field">
-<label>Father Name :</label>
-<div class="line" id="fatherName"></div>
-</div>
+  <div class="section-title">
+    RECEIVED FROM
+  </div>
 
-<div class="field">
-<label>Mobile No :</label>
-<div class="line" id="phone"></div>
-</div>
 
-<div class="field">
-<label>Address :</label>
-<div class="line" id="address"></div>
-</div>
+  <div class="details">
 
-</div>
+    <div class="detail-row">
+      <label>Name</label>
+      <div class="line">Harpreet Kaur</div>
+    </div>
 
+    <div class="detail-row">
+      <label>Father Name</label>
+      <div class="line">Gurwinder Singh</div>
+    </div>
 
-<table>
+    <div class="detail-row">
+      <label>Mobile Number</label>
+      <div class="line">9855114811</div>
+    </div>
 
-<tr>
-<th>DESCRIPTION</th>
-<th>AMOUNT (₹)</th>
-</tr>
+    <div class="detail-row">
+      <label>Address</label>
+      <div class="line">Ludhiana, Punjab</div>
+    </div>
 
-<tr>
+  </div>
 
-<td>
 
-Course :
-<span id="course"></span>
+  <div class="table-wrap">
 
-<br><br>
+    <table>
 
-Batch Time :
-<span id="batch"></span>
+      <tr>
+        <th>DESCRIPTION</th>
+        <th width="220">AMOUNT (₹)</th>
+      </tr>
 
-<br><br>
+      <tr>
+        <td>Course : Basic Turban Training</td>
+        <td>₹ 5,000</td>
+      </tr>
 
-Training Mode :
-Offline
+      <tr>
+        <td>Batch Time : Morning Batch</td>
+        <td></td>
+      </tr>
 
-<br><br>
+      <tr>
+        <td>Training Mode : Offline</td>
+        <td></td>
+      </tr>
 
-Registration Fee
+      <tr>
+        <td>Registration Fee</td>
+        <td>₹ 500</td>
+      </tr>
 
-</td>
+      <tr>
+        <td>Discount (If Any)</td>
+        <td>₹ 0</td>
+      </tr>
 
-<td style="vertical-align:bottom;">
+      <tr class="total-row">
+        <td>TOTAL AMOUNT PAID</td>
+        <td>₹ 5,500</td>
+      </tr>
 
-₹ <span id="amount"></span>
+    </table>
 
-</td>
+  </div>
 
-</tr>
 
-<tr>
+  <div class="section-title">
+    PAYMENT DETAILS
+  </div>
 
-<td>
-Discount (If Any)
-</td>
 
-<td>
-₹ 0
-</td>
+  <div class="payment-section">
 
-</tr>
+    <div class="left-payment">
 
-<tr class="total">
+      <div class="payment-row">
+        <label>Payment Mode</label>
+        <div>Cash / UPI / Bank Transfer</div>
+      </div>
 
-<td>
-TOTAL AMOUNT PAID
-</td>
+      <div class="payment-row">
+        <label>Transaction ID</label>
+        <div class="payment-line"></div>
+      </div>
 
-<td>
-₹ <span id="totalAmount"></span>
-</td>
+      <div class="payment-row">
+        <label>Payment Date</label>
+        <div class="payment-line">13/05/2026</div>
+      </div>
 
-</tr>
 
-</table>
+      <div class="notes">
 
+        <h3>Important Notes:</h3>
 
-<div class="payment-section">
+        <ul>
+          <li>Limited Seats Available</li>
+          <li>Advance Registration Recommended</li>
+          <li>First Come, First Served</li>
+          <li>Fees Once Paid Will Not Be Refunded</li>
+        </ul>
 
-<div class="section-title">
-PAYMENT DETAILS
-</div>
+      </div>
 
+    </div>
 
-<div class="payment-grid">
 
-<div>
+    <div class="right-payment">
 
-<div class="field">
+      <img src="images/qr.jpeg" class="qr">
 
-<label>Payment Mode :</label>
+      <div class="scan-text">
+        SCAN TO PAY
+      </div>
 
-<div>
-Cash / UPI / Bank Transfer
-</div>
+      <img src="images/stamp.jpeg" class="stamp">
 
-</div>
+      <div class="signature">
+        Authorized Signature<br>
+        Turban Creations
+      </div>
 
+    </div>
 
-<div class="field">
+  </div>
 
-<label>Transaction ID :</label>
 
-<div class="line"></div>
+  <div class="footer-message">
 
-</div>
+    <h1>
+      Thank you for your trust in Turban Creations.
+    </h1>
 
+    <p>
+      We wish you a successful learning journey!
+    </p>
 
-<div class="field">
-
-<label>Payment Date :</label>
-
-<div class="line" id="paymentDate"></div>
-
-</div>
-
-
-<div class="notes">
-
-<h3>Important Notes:</h3>
-
-<ul>
-
-<li>Limited Seats Available</li>
-
-<li>Advance Registration Recommended</li>
-
-<li>First Come, First Served</li>
-
-<li>Fees Once Paid Will Not Be Refunded</li>
-
-</ul>
-
-</div>
-
-</div>
-
-
-<div>
-
-<div class="qr-box">
-
-<img src="images/qr.jpeg" class="qr">
-
-<h3>SCAN TO PAY</h3>
+  </div>
 
 </div>
-
-
-<div class="signature">
-
-<img src="images/stamp.jpeg"class="stamp">
-
-<h3>Authorized Signature</h3>
-
-<p>Turban Creations</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<div class="bottom-text">
-
-Thank you for your trust in Turban Creations.
-
-<span>
-We wish you a successful learning journey!
-</span>
-
-</div>
-
-</div>
-
-</div>
-
-
-<script type="module">
-
-import { db }
-from "./firebase.js";
-
-import {
-doc,
-getDoc
-}
-from
-"https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-
-const studentId =
-localStorage.getItem(
-"receiptStudentId"
-);
-
-
-async function loadReceipt(){
-
-if(!studentId){
-
-alert("No Student Selected");
-
-return;
-
-}
-
-try{
-
-const studentRef =
-doc(db,"students",studentId);
-
-const studentSnap =
-await getDoc(studentRef);
-
-if(studentSnap.exists()){
-
-const student =
-studentSnap.data();
-
-
-document.getElementById(
-"studentName"
-).innerText =
-student.name || "";
-
-
-document.getElementById(
-"fatherName"
-).innerText =
-student.fatherName || "";
-
-
-document.getElementById(
-"phone"
-).innerText =
-student.phone || "";
-
-
-document.getElementById(
-"address"
-).innerText =
-student.address || "";
-
-
-document.getElementById(
-"course"
-).innerText =
-student.course || "";
-
-
-document.getElementById(
-"batch"
-).innerText =
-student.batch || "";
-
-
-document.getElementById(
-"amount"
-).innerText =
-student.amount || "0";
-
-
-document.getElementById(
-"totalAmount"
-).innerText =
-student.amount || "0";
-
-
-const today =
-new Date();
-
-const formattedDate =
-
-today.getDate() + "/" +
-
-(today.getMonth()+1) + "/" +
-
-today.getFullYear();
-
-
-document.getElementById(
-"receiptDate"
-).innerText =
-formattedDate;
-
-
-document.getElementById(
-"paymentDate"
-).innerText =
-formattedDate;
-
-
-document.getElementById(
-"receiptNo"
-).innerText =
-studentId.slice(0,6).toUpperCase();
-
-}
-
-}
-
-catch(error){
-
-console.error(error);
-
-alert("Error Loading Receipt");
-
-}
-
-}
-
-loadReceipt();
-
-</script>
 
 </body>
 </html>

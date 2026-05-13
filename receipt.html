@@ -1,4 +1,409 @@
+# Turban Creations Receipt Template (HTML)
+
+```html
 <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Turban Creations Receipt</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#f2f2f2;
+  padding:20px;
+}
+
+.receipt{
+  max-width:1000px;
+  margin:auto;
+  background:white;
+  border:2px solid #ff7a00;
+}
+
+.top-header{
+  background:black;
+  color:white;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:25px;
+  flex-wrap:wrap;
+}
+
+.logo-box{
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+
+.logo-box img{
+  width:100px;
+}
+
+.logo-text h1{
+  font-size:48px;
+  line-height:1;
+}
+
+.logo-text span{
+  color:#ff7a00;
+}
+
+.logo-text p{
+  margin-top:10px;
+  color:#ccc;
+}
+
+.receipt-title{
+  text-align:right;
+}
+
+.receipt-title h2{
+  color:#ff7a00;
+  font-size:28px;
+}
+
+.receipt-title h1{
+  font-size:70px;
+}
+
+.main-content{
+  padding:30px;
+}
+
+.info-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  margin-bottom:30px;
+}
+
+.contact-box p{
+  margin-bottom:14px;
+  font-size:18px;
+}
+
+.contact-box i{
+  color:#ff7a00;
+  width:30px;
+}
+
+.receipt-info{
+  border:2px solid #ff7a00;
+  padding:25px;
+  border-radius:10px;
+}
+
+.receipt-info p{
+  margin-bottom:18px;
+  font-size:20px;
+  font-weight:bold;
+}
+
+.received-box{
+  margin-top:30px;
+}
+
+.section-title{
+  display:inline-block;
+  background:#ff7a00;
+  color:black;
+  padding:10px 20px;
+  font-size:22px;
+  font-weight:bold;
+  margin-bottom:20px;
+}
+
+.field{
+  display:flex;
+  margin-bottom:20px;
+  font-size:20px;
+}
+
+.field label{
+  width:180px;
+  font-weight:bold;
+}
+
+.line{
+  flex:1;
+  border-bottom:2px solid #444;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:25px;
+}
+
+th{
+  background:#ff7a00;
+  color:black;
+  padding:15px;
+  font-size:20px;
+  border:1px solid #333;
+}
+
+td{
+  padding:18px;
+  border:1px solid #333;
+  font-size:18px;
+}
+
+.total{
+  background:#fff5e8;
+  font-weight:bold;
+  font-size:22px;
+}
+
+.payment-section{
+  margin-top:40px;
+}
+
+.payment-grid{
+  display:grid;
+  grid-template-columns:1fr 300px;
+  gap:30px;
+}
+
+.notes{
+  border:2px solid #ccc;
+  padding:20px;
+  border-radius:10px;
+  margin-top:20px;
+}
+
+.notes h3{
+  color:#ff7a00;
+  margin-bottom:15px;
+}
+
+.notes li{
+  margin-bottom:10px;
+  font-size:17px;
+}
+
+.qr-box{
+  text-align:center;
+}
+
+.qr-box img{
+  width:180px;
+  border:3px solid black;
+  padding:10px;
+}
+
+.signature{
+  margin-top:40px;
+  text-align:center;
+}
+
+.signature img{
+  width:150px;
+  margin-bottom:15px;
+}
+
+.bottom-text{
+  text-align:center;
+  margin-top:40px;
+  font-size:32px;
+  font-family:cursive;
+}
+
+.bottom-text span{
+  color:#ff7a00;
+  display:block;
+  margin-top:10px;
+  font-size:24px;
+}
+
+@media(max-width:768px){
+
+  .info-grid,
+  .payment-grid{
+    grid-template-columns:1fr;
+  }
+
+  .receipt-title h1{
+    font-size:45px;
+  }
+
+  .logo-text h1{
+    font-size:34px;
+  }
+
+  .field{
+    flex-direction:column;
+    gap:10px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="receipt">
+
+  <div class="top-header">
+
+    <div class="logo-box">
+
+      <img src="images/logo.jpg">
+
+      <div class="logo-text">
+        <h1><span>TURBAN</span><br>CREATIONS</h1>
+        <p>BY AJIT SINGH</p>
+      </div>
+
+    </div>
+
+    <div class="receipt-title">
+      <h2>TURBAN TRAINING CLASSES</h2>
+      <h1>RECEIPT</h1>
+    </div>
+
+  </div>
+
+
+  <div class="main-content">
+
+    <div class="info-grid">
+
+      <div class="contact-box">
+
+        <p><i class="fas fa-location-dot"></i> Ludhiana, Punjab</p>
+
+        <p><i class="fas fa-phone"></i> +91 9876366903</p>
+
+        <p><i class="fab fa-instagram"></i> @turbancreations_</p>
+
+        <p><i class="fab fa-facebook"></i> Turban Creations</p>
+
+        <p><i class="fas fa-globe"></i> turbancreations.netlify.app</p>
+
+      </div>
+
+
+      <div class="receipt-info">
+
+        <p>Receipt No. : TC/_______</p>
+
+        <p>Date : ____ / ____ / ______</p>
+
+      </div>
+
+    </div>
+
+
+    <div class="received-box">
+
+      <div class="section-title">
+        RECEIVED FROM
+      </div>
+
+
+      <div class="field">
+        <label>Name :</label>
+        <div class="line"></div>
+      </div>
+
+      <div class="field">
+        <label>Father Name :</label>
+        <div class="line"></div>
+      </div>
+
+      <div class="field">
+        <label>Mobile No :</label>
+        <div class="line"></div>
+      </div>
+
+      <div class="field">
+        <label>Address :</label>
+        <div class="line"></div>
+      </div>
+
+    </div>
+
+
+    <table>
+
+      <tr>
+        <th>DESCRIPTION</th>
+        <th>AMOUNT (₹)</th>
+      </tr>
+
+      <tr>
+        <td>
+          Course : ___________________<br><br>
+          Batch Time : ___________________<br><br>
+          Training Mode : ___________________<br><br>
+          Registration Fee
+        </td>
+
+        <td style="vertical-align:bottom;">
+          ₹ __________
+        </td>
+      </tr>
+
+      <tr>
+        <td>Discount (If Any)</td>
+        <td>₹ __________</td>
+      </tr>
+
+      <tr class="total">
+        <td>TOTAL AMOUNT PAID</td>
+        <td>₹ __________</td>
+      </tr>
+
+    </table>
+
+
+    <div class="payment-section">
+
+      <div class="section-title">
+        PAYMENT DETAILS
+      </div>
+
+
+      <div class="payment-grid">
+
+        <div>
+
+          <div class="field">
+            <label>Payment Mode :</label>
+            <div>
+              Cash &nbsp;&nbsp;
+              UPI &nbsp;&nbsp;
+              Bank Transfer
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Transaction ID :</label>
+            <div class="line"></div>
+          </div>
+
+          <div class="field">
+            <label>Payment Date :</label>
+            <div class="line"></div>
+          </div>
+
+
+          <div class="notes">
 
             <h3>Important Notes:</h3>
 

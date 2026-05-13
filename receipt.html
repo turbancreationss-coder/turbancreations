@@ -663,66 +663,8 @@ Print Receipt
 
   <table>
 
-    <tr>
-
-      <th>
-        Description
-      </th>
-
-      <th width="180">
-        Amount
-      </th>
-
-    </tr>
-
-    <tr>
-
-      <td>
-        Basic Turban Training
-      </td>
-
-      <td>
-        ₹ 5,000
-      </td>
-
-    </tr>
-
-    <tr>
-
-      <td>
-        Registration Charges
-      </td>
-
-      <td>
-        ₹ 500
-      </td>
-
-    </tr>
-
-    <tr>
-
-      <td>
-        Discount
-      </td>
-
-      <td>
-        ₹ 0
-      </td>
-
-    </tr>
-
-    <tr class="total-row">
-
-      <td>
-        TOTAL PAID
-      </td>
-
-      <td>
-        ₹ 5,500
-      </td>
-
-    </tr>
-
+  
+<tbody id="receiptTable"></tbody>
   </table>
 
 
@@ -847,6 +789,120 @@ Print Receipt
   </div>
 
 </div>
+  <script>
 
+const student = JSON.parse(
+localStorage.getItem("receiptStudent")
+);
+
+
+/* STUDENT DETAILS */
+
+document.querySelectorAll(".line")[0]
+.innerText = student.name || "";
+
+document.querySelectorAll(".line")[1]
+.innerText = student.fatherName || "";
+
+document.querySelectorAll(".line")[2]
+.innerText = student.phone || "";
+
+document.querySelectorAll(".line")[3]
+.innerText = student.address || "";
+
+
+/* PAYMENT TABLE */
+
+document.getElementById(
+"receiptTable"
+).innerHTML = `
+
+<tr>
+
+<td>
+${student.course || ""}
+</td>
+
+<td>
+₹ ${student.fees || 0}
+</td>
+
+</tr>
+
+<tr class="total-row">
+
+<td>
+TOTAL PAID
+</td>
+
+<td>
+₹ ${student.fees || 0}
+</td>
+
+</tr>
+
+`;
+
+
+/* PAYMENT MODE */
+
+const paymentRows =
+document.querySelectorAll(".payment-row div");
+
+if(student.paymentMode === "Cash"){
+
+paymentRows[0].innerHTML = `
+
+<input type="checkbox" checked>
+Cash
+
+&nbsp;&nbsp;
+
+<input type="checkbox">
+UPI
+
+`;
+
+}
+
+else{
+
+paymentRows[0].innerHTML = `
+
+<input type="checkbox">
+Cash
+
+&nbsp;&nbsp;
+
+<input type="checkbox" checked>
+UPI
+
+`;
+
+}
+
+
+/* STATUS */
+
+document.querySelector(
+".right-info"
+).innerHTML = `
+
+<p>
+Receipt No : TC${Math.floor(Math.random()*1000)}
+</p>
+
+<p>
+Date : ${new Date().toLocaleDateString()}
+</p>
+
+<p>
+Status : ${student.status || "Pending"}
+</p>
+
+`;
+
+</script>
+</body>
 </body>
 </html>

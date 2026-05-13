@@ -306,6 +306,10 @@ table td{
   <label>Training Mode</label>
   <div class="line">Offline</div>
 </div>
+  <div class="row">
+  <label>Joining Date</label>
+  <div class="line" id="joiningDate"></div>
+</div>
 
   <!-- MAIN -->
   <div class="main">
@@ -406,6 +410,8 @@ document.getElementById("infoBox").innerHTML = `
 document.getElementById("course").innerText = student.course || "Turban Training";
 
 document.getElementById("batch").innerText = student.batch || "Morning Batch";
+  document.getElementById("joiningDate").innerText =
+student.joiningDate || new Date().toLocaleDateString();
 </script>
 
 </body>

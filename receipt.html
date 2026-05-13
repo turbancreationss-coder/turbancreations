@@ -15,293 +15,343 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 
 <style>
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
 body{
+
+  margin:0;
+
+  padding:20px;
+
+  background:#dcdcdc;
 
   font-family:Arial,sans-serif;
 
-  background:#f2f2f2;
-
-  padding:20px;
-
-  display:flex;
-
-  justify-content:center;
-
 }
-
 
 .receipt{
 
-  width:210mm;
-  min-height:297mm;
+  width:794px;
+
+  min-height:1123px;
+
   margin:auto;
+
   background:white;
+
+  padding:25px;
+
+  box-sizing:border-box;
+
   border:2px solid #ff7a00;
-  padding:0;
 
 }
+
 .top-header{
-  background:black;
-  color:white;
+
   display:flex;
+
   justify-content:space-between;
+
   align-items:center;
-  padding:25px;
-  flex-wrap:wrap;
+
+  background:black;
+
+  color:white;
+
+  padding:20px;
+
 }
 
 .logo-box{
+
   display:flex;
+
   align-items:center;
-  gap:20px;
+
+  gap:15px;
+
 }
 
 .logo-box img{
-  width:100px;
+
+  width:90px;
+
 }
 
 .logo-text h1{
-  font-size:48px;
-  line-height:1;
-}
 
-.logo-text span{
-  color:#ff7a00;
+  margin:0;
+
+  font-size:42px;
+
+  line-height:42px;
+
 }
 
 .logo-text p{
-  margin-top:10px;
-  color:#ccc;
+
+  margin:0;
+
+  color:#ff7a00;
+
+  font-weight:bold;
+
 }
 
 .receipt-title{
+
   text-align:right;
+
 }
 
 .receipt-title h2{
+
+  margin:0;
+
   color:#ff7a00;
+
   font-size:28px;
+
 }
 
 .receipt-title h1{
-  font-size:70px;
+
+  margin:0;
+
+  font-size:58px;
+
 }
 
-.main-content{
-  padding:30px;
-}
+.top-info{
 
-.info-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
+  display:flex;
+
+  justify-content:space-between;
+
+  margin-top:25px;
+
   gap:30px;
-  margin-bottom:30px;
+
+}
+
+.contact-box{
+
+  width:50%;
+
 }
 
 .contact-box p{
-  margin-bottom:14px;
+
+  margin:10px 0;
+
   font-size:18px;
+
 }
 
-.contact-box i{
-  color:#ff7a00;
-  width:30px;
-}
+.receipt-box{
 
-.receipt-info{
+  width:50%;
+
   border:2px solid #ff7a00;
-  padding:25px;
-  border-radius:10px;
+
+  border-radius:12px;
+
+  padding:20px;
+
 }
 
-.receipt-info p{
-  margin-bottom:18px;
-  font-size:20px;
+.receipt-box p{
+
+  font-size:22px;
+
+  margin:15px 0;
+
   font-weight:bold;
-}
 
-.received-box{
-  margin-top:30px;
 }
 
 .section-title{
-  display:inline-block;
+
   background:#ff7a00;
+
   color:black;
+
+  display:inline-block;
+
   padding:10px 20px;
-  font-size:22px;
+
   font-weight:bold;
-  margin-bottom:20px;
+
+  margin-top:25px;
+
+  margin-bottom:15px;
+
+  font-size:24px;
+
 }
 
-.field{
+.info-line{
+
   display:flex;
-  margin-bottom:20px;
+
+  margin-bottom:14px;
+
   font-size:20px;
+
 }
 
-.field label{
-  width:200px;
+.info-line label{
+
+  width:180px;
+
   font-weight:bold;
+
 }
 
 .line{
+
   flex:1;
-  border-bottom:2px solid #444;
+
+  border-bottom:2px solid #777;
+
   padding-bottom:5px;
+
 }
 
-table{
+.table{
+
   width:100%;
+
   border-collapse:collapse;
-  margin-top:25px;
+
+  margin-top:20px;
+
 }
 
-th{
+.table th{
+
   background:#ff7a00;
-  color:black;
-  padding:15px;
+
+  padding:14px;
+
+  text-align:left;
+
   font-size:20px;
-  border:1px solid #333;
+
 }
 
-td{
-  padding:18px;
-  border:1px solid #333;
+.table td{
+
+  border:1px solid #999;
+
+  padding:14px;
+
   font-size:18px;
-}
 
-.total{
-  background:#fff5e8;
-  font-weight:bold;
-  font-size:22px;
 }
 
 .payment-section{
-  margin-top:40px;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  margin-top:25px;
+
+  gap:20px;
+
 }
 
-.payment-grid{
-  display:grid;
-  grid-template-columns:1fr 300px;
-  gap:30px;
+.left-payment{
+
+  width:60%;
+
+}
+
+.right-payment{
+
+  width:35%;
+
+  text-align:center;
+
+}
+
+.qr{
+
+  width:180px;
+
+  border:2px solid black;
+
+  padding:8px;
+
+}
+
+.stamp{
+
+  width:170px;
+
+  margin-top:25px;
+
 }
 
 .notes{
+
   border:2px solid #ccc;
-  padding:20px;
+
   border-radius:10px;
+
+  padding:15px;
+
   margin-top:20px;
+
 }
 
 .notes h3{
+
   color:#ff7a00;
-  margin-bottom:15px;
+
+  margin-top:0;
+
 }
 
 .notes li{
+
   margin-bottom:10px;
+
   font-size:17px;
-}
 
-.qr-box{
-  text-align:center;
-}
-
-.qr-box img{
-  width:180px;
-  border:3px solid black;
-  padding:10px;
 }
 
 .signature{
-  margin-top:40px;
-  text-align:center;
+
+  margin-top:15px;
+
+  font-size:18px;
+
 }
 
-.signature img{
-  width:150px;
-  margin-bottom:15px;
+.bottom-message{
+
+  text-align:center;
+
+  margin-top:40px;
+
 }
 
-.bottom-text{
-  text-align:center;
-  margin-top:40px;
-  font-size:32px;
+.bottom-message h1{
+
   font-family:cursive;
+
+  font-size:52px;
+
+  margin-bottom:10px;
+
 }
 
-.bottom-text span{
+.bottom-message p{
+
   color:#ff7a00;
-  display:block;
-  margin-top:10px;
-  font-size:24px;
-}
 
-.print-btn{
-  position:fixed;
-  top:20px;
-  right:20px;
-  background:#ff7a00;
-  color:black;
-  border:none;
-  padding:15px 25px;
-  border-radius:10px;
-  font-size:16px;
-  font-weight:bold;
-  cursor:pointer;
-  z-index:999;
-}
-
-.print-btn:hover{
-  background:black;
-  color:white;
-}
-
-@media print{
-
-  .print-btn{
-    display:none;
-  }
-
-  body{
-    background:white;
-    padding:0;
-  }
-
-}
-
-@media(max-width:768px){
-
-  .info-grid,
-  .payment-grid{
-    grid-template-columns:1fr;
-  }
-
-  .receipt-title h1{
-    font-size:45px;
-  }
-
-  .logo-text h1{
-    font-size:34px;
-  }
-
-  .field{
-    flex-direction:column;
-    gap:10px;
-  }
-
-}
-@page{
-
-  size:A4;
-
-  margin:10mm;
+  font-size:32px;
 
 }
 
@@ -317,13 +367,11 @@ td{
 
   .receipt{
 
-    width:210mm;
-
-    min-height:297mm;
-
     border:none;
 
-    box-shadow:none;
+    width:100%;
+
+    min-height:auto;
 
   }
 
@@ -573,7 +621,7 @@ Cash / UPI / Bank Transfer
 
 <div class="qr-box">
 
-<img src="images/qr.jpeg">
+<img src="images/qr.jpeg" class="qr">
 
 <h3>SCAN TO PAY</h3>
 
@@ -582,7 +630,7 @@ Cash / UPI / Bank Transfer
 
 <div class="signature">
 
-<img src="images/stamp.jpeg">
+<img src="images/stamp.jpeg"class="stamp">
 
 <h3>Authorized Signature</h3>
 

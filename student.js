@@ -1,61 +1,86 @@
 import { db } from "./firebase.js";
 
 import {
+
   collection,
   addDoc
-} from
+
+}
+
+from
+
 "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-const form = document.getElementById("studentForm");
 
-form.addEventListener("submit", async (e) => {
+const form =
+document.getElementById("studentForm");
+
+
+form.addEventListener("submit",
+
+async (e)=>{
 
   e.preventDefault();
 
   const studentData = {
 
     name:
-      document.getElementById("name").value,
+    document.getElementById("name").value,
+
+    fatherName:
+    document.getElementById("fatherName").value,
 
     phone:
-      document.getElementById("phone").value,
+    document.getElementById("phone").value,
 
     email:
-      document.getElementById("email").value,
+    document.getElementById("email").value,
 
     course:
-      document.getElementById("course").value,
+    document.getElementById("course").value,
 
-    fees:
-      document.getElementById("fees").value,
+    batch:
+    document.getElementById("batch").value,
 
     address:
-      document.getElementById("address").value,
+    document.getElementById("address").value,
 
     notes:
-      document.getElementById("notes").value,
+    document.getElementById("notes").value,
+
+    status:"Pending",
 
     createdAt:
-      new Date()
+    new Date()
 
   };
 
-  try {
+
+  try{
 
     await addDoc(
-      collection(db, "students"),
+
+      collection(db,"students"),
+
       studentData
+
     );
 
-    alert("Student Registered Successfully");
+    alert(
+      "Student Registered Successfully"
+    );
 
     form.reset();
 
-  } catch (error) {
+  }
+
+  catch(error){
 
     console.error(error);
 
-    alert("Error Saving Data");
+    alert(
+      "Error Saving Data"
+    );
 
   }
 

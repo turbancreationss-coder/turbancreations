@@ -556,64 +556,67 @@ table td{
 
 @media print{
 
+  html,
   body{
 
-    margin:0;
+    width:210mm;
+    height:297mm;
 
+    margin:0;
     padding:0;
 
     background:white;
 
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+
   }
 
   .print-btn{
-
     display:none;
-
   }
 
   .receipt{
 
-    width:100%;
-
-    max-width:210mm;
+    width:210mm;
+    min-height:297mm;
 
     border:none;
 
-    margin:auto;
+    margin:0 auto;
+
+    padding:12mm;
 
     box-shadow:none;
+
+    page-break-after:avoid;
 
   }
 
   .header{
-
     background:#111 !important;
-
     color:white !important;
-
   }
 
   .section{
-
     background:#ff9800 !important;
-
+    color:black !important;
   }
 
   .footer{
-
     background:#ff9800 !important;
-
+    color:black !important;
   }
 
   table th{
-
     background:#ff9800 !important;
-
   }
 
 }
-
+@page{
+  size:A4;
+  margin:0;
+}
 </style>
 
 </head>

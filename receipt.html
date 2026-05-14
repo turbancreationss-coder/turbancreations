@@ -285,19 +285,17 @@ table td{
 
 }
 
-/* BOTTOM */
-
 .bottom-section{
 
   display:flex;
 
   justify-content:space-between;
 
-  align-items:flex-end;
+  align-items:flex-start;
 
   gap:10px;
 
-  margin-top:5px;
+  margin-top:8px;   /* reduce upper space */
 
 }
 
@@ -306,7 +304,6 @@ table td{
   width:32%;
 
   text-align:center;
-  margin-top:5px;
 
 }
 
@@ -314,33 +311,35 @@ table td{
 
   width:110px;
 
-  margin-top:2px;
+  margin-top:0;   /* remove extra top gap */
 
 }
 
 .sign-img{
 
-  width:350px;
+  width:170px;
 
-  margin-top:6px;
+  height:80px;
 
-  height:120px;
+  object-fit:contain;
+
+  margin-top:0;   /* remove extra top gap */
 
 }
 
 .bottom-title{
 
-  margin-top:10px;
-
-  border-top:1px solid #ff9800 ;
-
-  padding-top:6px;
+  margin-top:8px;
 
   font-weight:bold;
 
   color:#ff9800;
 
   font-size:13px;
+
+  border-top:2px solid #ff9800;
+
+  padding-top:6px;
 
 }
 

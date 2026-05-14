@@ -41,6 +41,42 @@ h1{
 
 }
 
+.top-header{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  margin-bottom:25px;
+
+}
+
+.logout-btn{
+
+  border:none;
+
+  padding:10px 16px;
+
+  background:#dc3545;
+
+  color:white;
+
+  border-radius:8px;
+
+  cursor:pointer;
+
+  font-weight:bold;
+
+}
+
+.logout-btn:hover{
+
+  opacity:0.9;
+
+}
+
 .top-bar{
 
   margin-bottom:25px;
@@ -176,6 +212,8 @@ tr:hover{
 
   margin-right:6px;
 
+  margin-bottom:5px;
+
 }
 
 .edit-btn{
@@ -244,6 +282,14 @@ tr:hover{
 
   }
 
+  .top-header{
+
+    flex-direction:column;
+
+    gap:15px;
+
+  }
+
 }
 
 </style>
@@ -252,9 +298,37 @@ tr:hover{
 
 <body>
 
+<script>
+
+if(
+localStorage.getItem(
+"adminLoggedIn"
+) !== "true"
+){
+
+window.location.href =
+"login.html";
+
+}
+
+</script>
+
+
+<div class="top-header">
+
 <h1>
 TurbanCreations Admin Panel
 </h1>
+
+<button
+class="logout-btn"
+onclick="logout()">
+
+Logout
+
+</button>
+
+</div>
 
 
 <div class="top-bar">
@@ -314,6 +388,10 @@ Fees
 
 <th>
 Payment
+</th>
+
+<th>
+Joining Date
 </th>
 
 <th>
@@ -404,7 +482,7 @@ allStudents.length;
 }
 
 
-/* RENDER TABLE */
+/* RENDER */
 
 function renderStudents(students){
 
@@ -450,6 +528,10 @@ ${paymentMode}
 
 </span>
 
+</td>
+
+<td>
+${student.joiningDate || "-"}
 </td>
 
 <td>
@@ -585,9 +667,6 @@ student.fees || ""
 
 if(newFees === null) return;
 
-
-/* PAYMENT MODE */
-
 const paymentMode =
 prompt(
 "Payment Mode: Cash or UPI",
@@ -596,8 +675,13 @@ student.paymentMode || ""
 
 if(paymentMode === null) return;
 
+const joiningDate =
+prompt(
+"Joining Date",
+student.joiningDate || ""
+);
 
-/* STATUS */
+if(joiningDate === null) return;
 
 const newStatus =
 prompt(
@@ -625,6 +709,8 @@ phone:newPhone,
 fees:newFees,
 
 paymentMode:paymentMode,
+
+joiningDate:joiningDate,
 
 status:newStatus,
 
@@ -718,6 +804,20 @@ window.open(
 "receipt.html",
 "_blank"
 );
+
+}
+
+
+/* LOGOUT */
+
+window.logout = function(){
+
+localStorage.removeItem(
+"adminLoggedIn"
+);
+
+window.location.href =
+"login.html";
 
 }
 

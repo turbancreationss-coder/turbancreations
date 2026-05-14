@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
 <title>TurbanCreations Receipt</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 
@@ -22,398 +26,829 @@ body{
 }
 
 /* A4 PAGE */
+
 .receipt{
+
   width:210mm;
+
   min-height:297mm;
+
   background:white;
+
   margin:auto;
+
   padding:18px;
+
   border:2px solid #ff9800;
+
   display:flex;
+
   flex-direction:column;
+
 }
 
 /* HEADER */
+
 .header{
+
   display:flex;
+
   justify-content:space-between;
+
   align-items:center;
+
   background:#111;
+
   color:white;
+
   padding:20px;
+
   border-radius:8px;
+
 }
 
 .logo{
+
   display:flex;
+
   align-items:center;
+
   gap:10px;
+
 }
 
 .logo img{
+
   width:60px;
+
   height:60px;
+
   border-radius:50%;
+
 }
 
 .logo h1{
+
   color:#ff9800;
+
   font-size:22px;
+
   line-height:22px;
+
 }
 
 .title{
+
   text-align:right;
+
 }
 
 .title h2{
+
   color:#ff9800;
+
   font-size:16px;
+
 }
 
 /* INFO */
+
 .info{
+
   display:flex;
+
   justify-content:space-between;
+
   margin-top:10px;
+
 }
 
 .info-left p{
+
   font-size:13px;
+
   margin-bottom:5px;
+
 }
 
 .info-left i{
+
   color:#ff9800;
+
   width:18px;
+
 }
 
 .info-box{
+
   border:2px solid #ff9800;
+
   padding:10px;
+
   border-radius:8px;
+
   font-size:13px;
+
 }
 
 /* SECTION TITLE */
+
 .section{
+
   margin-top:10px;
+
   background:#ff9800;
+
   width:100%;
+
   display:block;
+
   padding:6px 12px;
+
   font-weight:bold;
+
   border-radius:5px;
+
   font-size:14px;
+
 }
 
 /* FORM */
+
 .row{
+
   display:flex;
+
   margin-top:6px;
+
 }
 
 .row label{
+
   width:140px;
+
   font-weight:bold;
+
   font-size:13px;
+
 }
 
 .line{
+
   flex:1;
+
   border-bottom:1px solid #333;
+
   font-size:13px;
+
   padding-left:5px;
+
 }
 
 /* MAIN */
+
 .main{
+
   flex:1;
+
   margin-top:15px;
+
 }
 
 /* TABLE */
+
 table{
+
   width:100%;
+
   border-collapse:collapse;
+
   margin-top:15px;
+
 }
 
 table th{
+
   border:1px solid #444;
+
   background:#ff9800;
+
   padding:10px;
+
   font-size:13px;
+
 }
 
 table td{
+
   border:1px solid #444;
+
   padding:8px;
+
   font-size:13px;
+
 }
 
-/* DOTED LINE */
-.separator{
-  border-top:2px dotted #999;
-  margin:12px 0;
-  color:#ff9800
-}
+/* PAYMENT MODE */
 
-/* BOTTOM SECTION */
-.bottom-section{
+.payment-mode{
+
+  margin-top:10px;
+
   display:flex;
+
+  align-items:center;
+
+  gap:15px;
+
+  font-size:14px;
+
+  font-weight:bold;
+
+}
+
+.payment-mode input{
+
+  margin-right:5px;
+
+}
+
+/* DOTTED LINE */
+
+.separator{
+
+  border-top:2px dotted #999;
+
+  margin:12px 0;
+
+  color:#ff9800;
+
+}
+
+/* BOTTOM */
+
+.bottom-section{
+
+  display:flex;
+
   justify-content:space-between;
-  align-items:flex-start;
+
+  align-items:flex-end;
+
   gap:10px;
+
+  margin-top:10px;
+
 }
 
 .bottom-box{
-  width:32%;
-  text-align:center;
-}
 
-.bottom-title{
-  margin-top:10px;
-  font-weight:bold;
-  color:#ff9800;
-  font-size:13px;
+  width:32%;
+
+  text-align:center;
+
 }
 
 .bottom-box img{
+
   width:110px;
+
   margin-top:6px;
+
 }
 
 .sign-img{
+
   width:350px;
+
   margin-top:6px;
+
   height:120px;
+
+}
+
+.bottom-title{
+
+  margin-top:10px;
+
+  border-top:1px solid #333;
+
+  padding-top:6px;
+
+  font-weight:bold;
+
+  color:#ff9800;
+
+  font-size:13px;
+
 }
 
 /* NOTES */
+
 .notes{
+
   margin-top:12px;
+
   background:#fafafa;
+
   border:1px solid #ddd;
+
   padding:10px;
+
   border-radius:8px;
+
 }
 
 .notes h3{
+
   color:#ff9800;
+
   margin-bottom:6px;
+
   font-size:15px;
+
 }
 
 .notes ol{
+
   padding-left:18px;
+
   font-size:13px;
+
 }
 
 .notes li{
+
   margin-bottom:4px;
+
 }
 
 /* FOOTER */
+
 .footer{
+
   margin-top:auto;
+
   background:#ff9800;
+
   text-align:center;
+
   padding:10px;
+
   font-weight:bold;
+
   border-radius:6px;
+
 }
 
 /* PRINT */
+
 .print-btn{
+
   position:fixed;
+
   right:20px;
+
   top:20px;
+
   padding:10px 15px;
+
   background:#ff9800;
+
   border:none;
+
   cursor:pointer;
+
   font-weight:bold;
+
 }
 
 @media print{
-  .print-btn{display:none;}
-  body{background:white; padding:0;}
-  .receipt{border:none;}
+
+  .print-btn{
+
+    display:none;
+
+  }
+
+  body{
+
+    background:white;
+
+    padding:0;
+
+  }
+
+  .receipt{
+
+    border:none;
+
+  }
+
 }
 
 </style>
+
 </head>
 
 <body>
 
-<button class="print-btn" onclick="window.print()">Print</button>
+<button class="print-btn"
+onclick="window.print()">
+Print
+</button>
 
 <div class="receipt">
 
   <!-- HEADER -->
+
   <div class="header">
 
     <div class="logo">
+
       <img src="images/logo.jpg">
+
       <div>
+
         <h1>TURBAN</h1>
         <h1>CREATIONS</h1>
+
       </div>
+
     </div>
 
     <div class="title">
-      <h1> RECEIPT</h1>
-      <div>Professional Turban Training</div>
+
+      <h1>RECEIPT</h1>
+
+      <div>
+        Professional Turban Training
+      </div>
+
     </div>
 
   </div>
 
+
   <!-- INFO -->
+
   <div class="info">
 
-<div class="info-left">
+    <div class="info-left">
 
-  <p><i class="fas fa-phone"></i> +91 9876366903</p>
+      <p>
+        <i class="fas fa-phone"></i>
+        +91 9876366903
+      </p>
 
-  <p><i class="fab fa-instagram"></i> Instagram: @turbancreations_</p>
+      <p>
+        <i class="fab fa-instagram"></i>
+        Instagram: @turbancreations_
+      </p>
 
-  <p><i class="fab fa-facebook"></i> Facebook: Ajit Singh Pandher</p>
+      <p>
+        <i class="fab fa-facebook"></i>
+        Facebook: Ajit Singh Pandher
+      </p>
 
-  <p><i class="fab fa-youtube"></i> YouTube: TurbanCreations</p>
+      <p>
+        <i class="fab fa-youtube"></i>
+        YouTube: TurbanCreations
+      </p>
 
-  <p><i class="fas fa-globe"></i> Website: turbancreations.netlify.app</p>
+      <p>
+        <i class="fas fa-globe"></i>
+        Website: turbancreations.netlify.app
+      </p>
 
-</div>
+    </div>
 
     <div class="info-box" id="infoBox"></div>
 
   </div>
-  <!-- SEPARATOR -->
-    <div class="separator"></div>
 
-  <!-- STUDENT -->
-  <div class="section">STUDENT DETAILS</div>
 
-  <div class="row"><label>Name : </label><div class="line" id="name"></div></div>
-  <div class="row"><label>Father : </label><div class="line" id="father"></div></div>
-  <div class="row"><label>Phone : </label><div class="line" id="phone"></div></div>
-  <div class="row"><label>Address : </label><div class="line" id="address"></div></div>
+  <div class="separator"></div>
+
+
+  <!-- STUDENT DETAILS -->
+
+  <div class="section">
+    STUDENT DETAILS
+  </div>
+
   <div class="row">
-  <label>Course</label>
-  <div class="line" id="course"></div>
-</div>
+    <label>Name :</label>
+    <div class="line" id="name"></div>
+  </div>
 
-<div class="row">
-  <label>Batch Timing</label>
-  <div class="line" id="batch"></div>
-</div>
-
-<div class="row">
-  <label>Training Mode</label>
-  <div class="line">Offline</div>
-</div>
   <div class="row">
-  <label>Joining Date</label>
-  <div class="line" id="joiningDate"></div>
-</div>
+    <label>Father :</label>
+    <div class="line" id="father"></div>
+  </div>
+
+  <div class="row">
+    <label>Phone :</label>
+    <div class="line" id="phone"></div>
+  </div>
+
+  <div class="row">
+    <label>Address :</label>
+    <div class="line" id="address"></div>
+  </div>
+
+  <div class="row">
+    <label>Course :</label>
+    <div class="line" id="course"></div>
+  </div>
+
+  <div class="row">
+    <label>Batch Timing :</label>
+    <div class="line" id="batch"></div>
+  </div>
+
+  <div class="row">
+    <label>Training Mode :</label>
+    <div class="line">Offline</div>
+  </div>
+
+  <div class="row">
+    <label>Joining Date :</label>
+    <div class="line" id="joiningDate"></div>
+  </div>
+
 
   <!-- MAIN -->
+
   <div class="main">
 
-    <div class="section">PAYMENT DETAILS</div>
+    <div class="section">
+      PAYMENT DETAILS
+    </div>
 
     <table>
+
       <tbody id="table"></tbody>
+
     </table>
 
+
+    <!-- PAYMENT MODE -->
+
+    <div class="payment-mode">
+
+      <label>
+        Payment Mode :
+      </label>
+
+      <div id="paymentModeBox"></div>
+
+    </div>
+
+
     <!-- NOTES -->
+
     <div class="notes">
 
-      <h3>Important Notes for Receipt</h3>
+      <h3>
+        Important Notes for Receipt
+      </h3>
 
       <ol>
-        <li>Fees once paid are non-refundable and non-transferable.</li>
-        <li>Payment confirms your seat in the Turban Training Class.</li>
-        <li>Students must bring and keep their receipt for entry and verification.</li>
-        <li>Class timings and schedule must be strictly followed. Missed classes will not be adjusted or compensated.</li>
-        <li>Management reserves the right to change batch timing, schedule, or class structure if required.</li>
-        <li>Discipline, punctuality, and respectful behavior are mandatory during training.</li>
-        <li>Certificate (if applicable) will be issued only after successful completion of the course.</li>
-        <li>In case of any dispute, management decision will be final.</li>
+
+        <li>
+          Fees once paid are non-refundable and non-transferable.
+        </li>
+
+        <li>
+          Payment confirms your seat in the Turban Training Class.
+        </li>
+
+        <li>
+          Students must bring and keep their receipt for entry and verification.
+        </li>
+
+        <li>
+          Class timings and schedule must be strictly followed.
+        </li>
+
+        <li>
+          Management reserves the right to change schedules if required.
+        </li>
+
+        <li>
+          Discipline and punctuality are mandatory during training.
+        </li>
+
+        <li>
+          Certificate (if applicable) issued after completion.
+        </li>
+
+        <li>
+          Management decision will be final in disputes.
+        </li>
+
       </ol>
 
     </div>
-<div class="separator"></div>
+
+
+    <div class="separator"></div>
+
+
     <!-- QR + STAMP + SIGN -->
+
     <div class="bottom-section">
 
       <div class="bottom-box">
-        
+
         <img src="images/qr.jpeg">
-        <div class="bottom-title">SCAN TO PAY </div>
+
+        <div class="bottom-title">
+          SCAN TO PAY
+        </div>
+
       </div>
 
       <div class="bottom-box">
-        
+
         <img src="images/stamp.jpeg">
-        <div class="bottom-title"> AUTHORIZED STAMP</div>
+
+        <div class="bottom-title">
+          AUTHORIZED STAMP
+        </div>
+
       </div>
 
       <div class="bottom-box">
-        
-        <img src="images/sign.png" class="sign-img">
-        <div class="bottom-title"> AUTHORIZED SIGNATURE</div>
+
+        <img src="images/sign.png"
+        class="sign-img">
+
+        <div class="bottom-title">
+          AUTHORIZED SIGNATURE
+        </div>
+
       </div>
 
     </div>
 
   </div>
 
+
   <!-- FOOTER -->
+
   <div class="footer">
+
     THANK YOU FOR TRUSTING TURBAN CREATIONS
+
   </div>
 
 </div>
 
+
 <script>
 
-const student = JSON.parse(localStorage.getItem("receiptStudent")) || {};
+const student =
+JSON.parse(
+localStorage.getItem("receiptStudent")
+) || {};
 
-/* DATA */
-document.getElementById("name").innerText = student.name || "";
-document.getElementById("father").innerText = student.fatherName || "";
-document.getElementById("phone").innerText = student.phone || "";
-document.getElementById("address").innerText = student.address || "";
 
-/* TABLE */
+/* DETAILS */
+
+document.getElementById("name").innerText =
+student.name || "";
+
+document.getElementById("father").innerText =
+student.fatherName || "";
+
+document.getElementById("phone").innerText =
+student.phone || "";
+
+document.getElementById("address").innerText =
+student.address || "";
+
+document.getElementById("course").innerText =
+student.course || "Turban Training";
+
+document.getElementById("batch").innerText =
+student.batch || "Morning Batch";
+
+document.getElementById("joiningDate").innerText =
+student.joiningDate ||
+new Date().toLocaleDateString();
+
+
+/* PAYMENT TABLE */
+
 document.getElementById("table").innerHTML = `
+
 <tr>
-<th>Course</th>
-<th>Amount</th>
+
+<th>
+Course
+</th>
+
+<th>
+Amount
+</th>
+
 </tr>
+
 <tr>
-<td>${student.course || ""}</td>
-<td>₹${student.fees || 0}</td>
+
+<td>
+${student.course || ""}
+</td>
+
+<td>
+₹${student.fees || 0}
+</td>
+
 </tr>
+
 <tr>
-<td><b>Total</b></td>
-<td><b>₹${student.fees || 0}</b></td>
+
+<td>
+<b>Total</b>
+</td>
+
+<td>
+<b>₹${student.fees || 0}</b>
+</td>
+
 </tr>
+
 `;
+
+
+/* PAYMENT MODE */
+
+if(student.paymentMode === "Cash"){
+
+document.getElementById(
+"paymentModeBox"
+).innerHTML = `
+
+<label>
+<input type="checkbox" checked>
+Cash
+</label>
+
+&nbsp;&nbsp;
+
+<label>
+<input type="checkbox">
+UPI
+</label>
+
+`;
+
+}
+
+else{
+
+document.getElementById(
+"paymentModeBox"
+).innerHTML = `
+
+<label>
+<input type="checkbox">
+Cash
+</label>
+
+&nbsp;&nbsp;
+
+<label>
+<input type="checkbox" checked>
+UPI
+</label>
+
+`;
+
+}
+
 
 /* INFO BOX */
-document.getElementById("infoBox").innerHTML = `
-<b>Receipt No:</b> TC-${Date.now().toString().slice(-6)}<br>
-<b>Date:</b> ${new Date().toLocaleDateString()}<br>
-<b>Status:</b> ${student.status || "Paid"}
-`;
-document.getElementById("course").innerText = student.course || "Turban Training";
 
-document.getElementById("batch").innerText = student.batch || "Morning Batch";
-  document.getElementById("joiningDate").innerText =
-student.joiningDate || new Date().toLocaleDateString();
+document.getElementById("infoBox").innerHTML = `
+
+<b>Receipt No:</b>
+TC-${Date.now().toString().slice(-6)}
+
+<br><br>
+
+<b>Date:</b>
+${new Date().toLocaleDateString()}
+
+<br><br>
+
+<b>Status:</b>
+${student.status || "Paid"}
+
+`;
+
 </script>
 
 </body>

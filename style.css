@@ -24,13 +24,13 @@ header{position:sticky;top:0;z-index:1000;background:rgba(0,0,0,.75);backdrop-fi
 .brand .title{font-weight:1000;letter-spacing:.5px}
 .brand .title span{color:var(--brand)}
 .nav a{margin:0 10px;font-weight:600;color:var(--text);opacity:.8}
-.nav a.active,.nav a:hover{opacity:1;color:var(--brand)}
+.nav a.active,.nav a:hover{opacity:1;color:#fef9f9; }
 .menu-toggle{display:none;background:none;border:1px solid rgba(255,255,255,.15);color:var(--text);padding:6px 10px;border-radius:8px}
 .admin-btn{
 
   color:#fef9f9 !important;
 
-  padding:10px 18px;
+  padding:10px;
 
   border-radius:8px;
 

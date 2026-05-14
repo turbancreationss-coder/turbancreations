@@ -18,6 +18,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
   padding:0;
   box-sizing:border-box;
   font-family:Arial;
+
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
 }
 
 body{
@@ -25,11 +28,12 @@ body{
   padding:20px;
 }
 
-/* A4 PAGE */
+/* RECEIPT */
 
 .receipt{
 
-  width:210mm;
+  width:100%;
+  max-width:210mm;
 
   min-height:297mm;
 
@@ -103,11 +107,15 @@ body{
 
 }
 
-.title h2{
+.title h1{
 
-  color:#ff9800;
+  font-size:30px;
 
-  font-size:16px;
+}
+
+.title div{
+
+  font-size:13px;
 
 }
 
@@ -118,6 +126,8 @@ body{
   display:flex;
 
   justify-content:space-between;
+
+  gap:15px;
 
   margin-top:10px;
 
@@ -149,9 +159,11 @@ body{
 
   font-size:13px;
 
+  min-width:220px;
+
 }
 
-/* SECTION TITLE */
+/* SECTION */
 
 .section{
 
@@ -159,11 +171,7 @@ body{
 
   background:#ff9800;
 
-  width:100%;
-
-  display:block;
-
-  padding:6px 12px;
+  padding:8px 12px;
 
   font-weight:bold;
 
@@ -173,7 +181,7 @@ body{
 
 }
 
-/* FORM */
+/* FORM ROW */
 
 .row{
 
@@ -203,6 +211,8 @@ body{
 
   padding-left:5px;
 
+  padding-bottom:2px;
+
 }
 
 /* MAIN */
@@ -211,7 +221,7 @@ body{
 
   flex:1;
 
-  margin-top:15px;
+  margin-top:12px;
 
 }
 
@@ -223,7 +233,7 @@ table{
 
   border-collapse:collapse;
 
-  margin-top:15px;
+  margin-top:12px;
 
 }
 
@@ -273,74 +283,13 @@ table td{
 
 }
 
-/* DOTTED LINE */
+/* LINE */
 
 .separator{
 
   border-top:2px dotted #999;
 
   margin:12px 0;
-
-  color:#ff9800;
-
-}
-
-/* BOTTOM */
-
-.bottom-section{
-
-  display:flex;
-
-  justify-content:space-between;
-
-  align-items:flex-end;
-
-  gap:10px;
-
-  margin-top:5px;
-
-}
-
-.bottom-box{
-
-  width:32%;
-
-  text-align:center;
-  margin-top:5px;
-
-}
-
-.bottom-box img{
-
-  width:110px;
-
-  margin-top:2px;
-
-}
-
-.sign-img{
-
-  width:350px;
-
-  margin-top:6px;
-
-  height:120px;
-
-}
-
-.bottom-title{
-
-  margin-top:10px;
-
-  border-top:1px solid #ff9800 ;
-
-  padding-top:6px;
-
-  font-weight:bold;
-
-  color:#ff9800;
-
-  font-size:13px;
 
 }
 
@@ -384,11 +333,67 @@ table td{
 
 }
 
+/* BOTTOM */
+
+.bottom-section{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:flex-end;
+
+  gap:10px;
+
+  margin-top:10px;
+
+}
+
+.bottom-box{
+
+  width:32%;
+
+  text-align:center;
+
+}
+
+.bottom-box img{
+
+  width:100px;
+
+}
+
+.sign-img{
+
+  width:180px !important;
+
+  height:80px;
+
+  object-fit:contain;
+
+}
+
+.bottom-title{
+
+  margin-top:8px;
+
+  border-top:1px solid #ff9800;
+
+  padding-top:5px;
+
+  font-weight:bold;
+
+  color:#ff9800;
+
+  font-size:12px;
+
+}
+
 /* FOOTER */
 
 .footer{
 
-  margin-top:auto;
+  margin-top:12px;
 
   background:#ff9800;
 
@@ -402,7 +407,7 @@ table td{
 
 }
 
-/* PRINT */
+/* PRINT BUTTON */
 
 .print-btn{
 
@@ -422,9 +427,144 @@ table td{
 
   font-weight:bold;
 
+  border-radius:5px;
+
+  z-index:999;
+
 }
 
+/* MOBILE */
+
+@media(max-width:768px){
+
+  body{
+
+    padding:5px;
+
+    background:white;
+
+  }
+
+  .receipt{
+
+    padding:10px;
+
+    border:none;
+
+  }
+
+  .header{
+
+    padding:12px;
+
+  }
+
+  .logo img{
+
+    width:45px;
+
+    height:45px;
+
+  }
+
+  .logo h1{
+
+    font-size:16px;
+
+    line-height:16px;
+
+  }
+
+  .title h1{
+
+    font-size:20px;
+
+  }
+
+  .info{
+
+    flex-direction:column;
+
+  }
+
+  .info-left p{
+
+    font-size:11px;
+
+  }
+
+  .info-box{
+
+    width:100%;
+
+    font-size:11px;
+
+  }
+
+  .row label{
+
+    width:95px;
+
+    font-size:11px;
+
+  }
+
+  .line{
+
+    font-size:11px;
+
+  }
+
+  table th,
+  table td{
+
+    font-size:11px;
+
+    padding:6px;
+
+  }
+
+  .notes li{
+
+    font-size:10px;
+
+  }
+
+  .bottom-box img{
+
+    width:70px;
+
+  }
+
+  .sign-img{
+
+    width:100px !important;
+
+    height:50px;
+
+  }
+
+  .bottom-title{
+
+    font-size:9px;
+
+  }
+
+}
+
+/* PRINT */
+
 @media print{
+
+  body{
+
+    margin:0;
+
+    padding:0;
+
+    background:white;
+
+  }
 
   .print-btn{
 
@@ -432,17 +572,43 @@ table td{
 
   }
 
-  body{
+  .receipt{
 
-    background:white;
+    width:100%;
 
-    padding:0;
+    max-width:210mm;
+
+    border:none;
+
+    margin:auto;
+
+    box-shadow:none;
 
   }
 
-  .receipt{
+  .header{
 
-    border:none;
+    background:#111 !important;
+
+    color:white !important;
+
+  }
+
+  .section{
+
+    background:#ff9800 !important;
+
+  }
+
+  .footer{
+
+    background:#ff9800 !important;
+
+  }
+
+  table th{
+
+    background:#ff9800 !important;
 
   }
 
@@ -461,252 +627,241 @@ Print
 
 <div class="receipt">
 
-  <!-- HEADER -->
+<!-- HEADER -->
 
-  <div class="header">
+<div class="header">
 
-    <div class="logo">
+<div class="logo">
 
-      <img src="images/logo.jpg">
+<img src="https://turbancreations.netlify.app/images/logo.jpg">
 
-      <div>
+<div>
 
-        <h1>TURBAN</h1>
-        <h1>CREATIONS</h1>
-
-      </div>
-
-    </div>
-
-    <div class="title">
-
-      <h1>RECEIPT</h1>
-
-      <div>
-        Professional Turban Training
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <!-- INFO -->
-
-  <div class="info">
-
-    <div class="info-left">
-
-      <p>
-        <i class="fas fa-phone"></i>
-        +91 9876366903
-      </p>
-
-      <p>
-        <i class="fab fa-instagram"></i>
-        Instagram: @turbancreations_
-      </p>
-
-      <p>
-        <i class="fab fa-facebook"></i>
-        Facebook: Ajit Singh Pandher
-      </p>
-
-      <p>
-        <i class="fab fa-youtube"></i>
-        YouTube: TurbanCreations
-      </p>
-
-      <p>
-        <i class="fas fa-globe"></i>
-        Website: turbancreations.netlify.app
-      </p>
-
-    </div>
-
-    <div class="info-box" id="infoBox"></div>
-
-  </div>
-
-
-  <div class="separator"></div>
-
-
-  <!-- STUDENT DETAILS -->
-
-  <div class="section">
-    STUDENT DETAILS
-  </div>
-
-  <div class="row">
-    <label>Name :</label>
-    <div class="line" id="name"></div>
-  </div>
-
-  <div class="row">
-    <label>Father :</label>
-    <div class="line" id="father"></div>
-  </div>
-
-  <div class="row">
-    <label>Phone :</label>
-    <div class="line" id="phone"></div>
-  </div>
-
-  <div class="row">
-    <label>Address :</label>
-    <div class="line" id="address"></div>
-  </div>
-
-  <div class="row">
-    <label>Course :</label>
-    <div class="line" id="course"></div>
-  </div>
-
-  <div class="row">
-    <label>Batch Timing :</label>
-    <div class="line" id="batch"></div>
-  </div>
-
-  <div class="row">
-    <label>Training Mode :</label>
-    <div class="line">Offline</div>
-  </div>
-
-  <div class="row">
-    <label>Joining Date :</label>
-    <div class="line" id="joiningDate"></div>
-  </div>
-
-
-  <!-- MAIN -->
-
-  <div class="main">
-
-    <div class="section">
-      PAYMENT DETAILS
-    </div>
-
-    <table>
-
-      <tbody id="table"></tbody>
-
-    </table>
-
-
-    <!-- PAYMENT MODE -->
-
-    <div class="payment-mode">
-
-      <label>
-        Payment Mode :
-      </label>
-
-      <div id="paymentModeBox"></div>
-
-    </div>
-
-
-    <!-- NOTES -->
-
-    <div class="notes">
-
-      <h3>
-        Important Notes for Receipt
-      </h3>
-
-      <ol>
-
-        <li>
-          Fees once paid are non-refundable and non-transferable.
-        </li>
-
-        <li>
-          Payment confirms your seat in the Turban Training Class.
-        </li>
-
-        <li>
-          Students must bring and keep their receipt for entry and verification.
-        </li>
-
-        <li>
-          Class timings and schedule must be strictly followed.
-        </li>
-
-        <li>
-          Management reserves the right to change schedules if required.
-        </li>
-
-        <li>
-          Discipline and punctuality are mandatory during training.
-        </li>
-
-        <li>
-          Certificate (if applicable) issued after completion.
-        </li>
-
-        <li>
-          Management decision will be final in disputes.
-        </li>
-
-      </ol>
-
-    </div>
-
-
-    <div class="separator"></div>
-
-
-    <!-- QR + STAMP + SIGN -->
-
-    <div class="bottom-section">
-
-      <div class="bottom-box">
-
-        <img src="images/qr.jpeg">
-
-        <div class="bottom-title">
-          SCAN TO PAY
-        </div>
-
-      </div>
-
-      <div class="bottom-box">
-
-        <img src="images/stamp.jpeg">
-
-        <div class="bottom-title">
-          AUTHORIZED STAMP
-        </div>
-
-      </div>
-
-      <div class="bottom-box">
-
-        <img src="images/sign.png"
-        class="sign-img">
-
-        <div class="bottom-title">
-          AUTHORIZED SIGNATURE
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <!-- FOOTER -->
-
-  <div class="footer">
-
-    THANK YOU FOR TRUSTING TURBAN CREATIONS
-
-  </div>
+<h1>TURBAN</h1>
+<h1>CREATIONS</h1>
 
 </div>
 
+</div>
+
+<div class="title">
+
+<h1>RECEIPT</h1>
+
+<div>
+Professional Turban Training
+</div>
+
+</div>
+
+</div>
+
+<!-- INFO -->
+
+<div class="info">
+
+<div class="info-left">
+
+<p>
+<i class="fas fa-phone"></i>
++91 9876366903
+</p>
+
+<p>
+<i class="fab fa-instagram"></i>
+@turbancreations_
+</p>
+
+<p>
+<i class="fab fa-facebook"></i>
+Ajit Singh Pandher
+</p>
+
+<p>
+<i class="fab fa-youtube"></i>
+TurbanCreations
+</p>
+
+<p>
+<i class="fas fa-globe"></i>
+turbancreations.netlify.app
+</p>
+
+</div>
+
+<div class="info-box"
+id="infoBox"></div>
+
+</div>
+
+<div class="separator"></div>
+
+<!-- STUDENT -->
+
+<div class="section">
+STUDENT DETAILS
+</div>
+
+<div class="row">
+<label>Name :</label>
+<div class="line" id="name"></div>
+</div>
+
+<div class="row">
+<label>Father :</label>
+<div class="line" id="father"></div>
+</div>
+
+<div class="row">
+<label>Phone :</label>
+<div class="line" id="phone"></div>
+</div>
+
+<div class="row">
+<label>Address :</label>
+<div class="line" id="address"></div>
+</div>
+
+<div class="row">
+<label>Course :</label>
+<div class="line" id="course"></div>
+</div>
+
+<div class="row">
+<label>Batch :</label>
+<div class="line" id="batch"></div>
+</div>
+
+<div class="row">
+<label>Training :</label>
+<div class="line">Offline</div>
+</div>
+
+<div class="row">
+<label>Joining Date :</label>
+<div class="line" id="joiningDate"></div>
+</div>
+
+<!-- PAYMENT -->
+
+<div class="main">
+
+<div class="section">
+PAYMENT DETAILS
+</div>
+
+<table>
+
+<tbody id="table"></tbody>
+
+</table>
+
+<div class="payment-mode">
+
+<label>
+Payment Mode :
+</label>
+
+<div id="paymentModeBox"></div>
+
+</div>
+
+<!-- NOTES -->
+
+<div class="notes">
+
+<h3>
+Important Notes
+</h3>
+
+<ol>
+
+<li>
+Fees once paid are non-refundable.
+</li>
+
+<li>
+Payment confirms your seat.
+</li>
+
+<li>
+Keep this receipt safely.
+</li>
+
+<li>
+Class timing must be followed.
+</li>
+
+<li>
+Management can change schedule if required.
+</li>
+
+<li>
+Discipline is mandatory during training.
+</li>
+
+<li>
+Certificate issued after completion.
+</li>
+
+<li>
+Management decision will be final.
+</li>
+
+</ol>
+
+</div>
+
+<div class="separator"></div>
+
+<!-- BOTTOM -->
+
+<div class="bottom-section">
+
+<div class="bottom-box">
+
+<img src="https://turbancreations.netlify.app/images/qr.jpeg">
+
+<div class="bottom-title">
+SCAN TO PAY
+</div>
+
+</div>
+
+<div class="bottom-box">
+
+<img src="https://turbancreations.netlify.app/images/stamp.jpeg">
+
+<div class="bottom-title">
+AUTHORIZED STAMP
+</div>
+
+</div>
+
+<div class="bottom-box">
+
+<img src="https://turbancreations.netlify.app/images/sign.png"
+class="sign-img">
+
+<div class="bottom-title">
+AUTHORIZED SIGNATURE
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+
+<div class="footer">
+
+THANK YOU FOR TRUSTING TURBAN CREATIONS
+
+</div>
+
+</div>
 
 <script>
 
@@ -714,7 +869,6 @@ const student =
 JSON.parse(
 localStorage.getItem("receiptStudent")
 ) || {};
-
 
 /* DETAILS */
 
@@ -731,17 +885,15 @@ document.getElementById("address").innerText =
 student.address || "";
 
 document.getElementById("course").innerText =
-student.course || "Turban Training";
+student.course || "";
 
 document.getElementById("batch").innerText =
-student.batch || "Morning Batch";
+student.batch || "";
 
 document.getElementById("joiningDate").innerText =
-student.joiningDate ||
-new Date().toLocaleDateString();
+student.joiningDate || "";
 
-
-/* PAYMENT TABLE */
+/* TABLE */
 
 document.getElementById("table").innerHTML = `
 
@@ -783,7 +935,6 @@ ${student.course || ""}
 
 `;
 
-
 /* PAYMENT MODE */
 
 if(student.paymentMode === "Cash"){
@@ -806,9 +957,7 @@ UPI
 
 `;
 
-}
-
-else{
+}else{
 
 document.getElementById(
 "paymentModeBox"
@@ -830,10 +979,11 @@ UPI
 
 }
 
+/* INFO */
 
-/* INFO BOX */
-
-document.getElementById("infoBox").innerHTML = `
+document.getElementById(
+"infoBox"
+).innerHTML = `
 
 <b>Receipt No:</b>
 TC-${Date.now().toString().slice(-6)}

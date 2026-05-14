@@ -266,3 +266,33 @@ footer{border-top:1px solid rgba(255, 255, 255, 0.08);padding:24px 0;color:var(-
   color: #fff;
   transition: 0.3s;
 }
+
+.whatsapp-float{
+
+position:fixed;
+
+width:60px;
+height:60px;
+
+bottom:20px;
+right:20px;
+
+background:#25d366;
+
+color:white;
+
+border-radius:50%;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:30px;
+
+z-index:999;
+
+text-decoration:none;
+
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+
+}

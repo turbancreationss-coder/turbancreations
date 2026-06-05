@@ -122,8 +122,9 @@ h1{
 
   box-shadow:0 3px 10px rgba(0,0,0,0.1);
 
-}
+  border-left:5px solid #d4af37;
 
+}
 .card h2{
 
   font-size:18px;
@@ -352,16 +353,34 @@ placeholder="Search student by name or phone">
 
 <div class="stats">
 
+  <div class="card">
+    <h2>Total Students</h2>
+    <p id="totalStudents">0</p>
+  </div>
+
+  <div class="card">
+    <h2>Paid Students</h2>
+    <p id="paidStudents">0</p>
+  </div>
+
+  <div class="card">
+    <h2>Pending Students</h2>
+    <p id="pendingStudents">0</p>
+  </div>
+
+  <div class="card">
+    <h2>Total Revenue</h2>
+    <p id="totalRevenue">₹0</p>
+  </div>
+
+  <div class="card">
+  <h2>Admissions This Month</h2>
+  <p id="monthlyAdmissions">0</p>
+</div>
+
 <div class="card">
-
-<h2>
-Total Students
-</h2>
-
-<p id="totalStudents">
-0
-</p>
-
+  <h2>Revenue This Month</h2>
+  <p id="monthlyRevenue">₹0</p>
 </div>
 
 </div>
@@ -464,6 +483,31 @@ document.getElementById(
 "totalStudents"
 );
 
+const paidStudents =
+document.getElementById(
+"paidStudents"
+);
+
+const pendingStudents =
+document.getElementById(
+"pendingStudents"
+);
+
+const totalRevenue =
+document.getElementById(
+"totalRevenue"
+);
+
+const monthlyAdmissions =
+document.getElementById(
+"monthlyAdmissions"
+);
+
+const monthlyRevenue =
+document.getElementById(
+"monthlyRevenue"
+);
+
 let allStudents = [];
 
 
@@ -495,8 +539,78 @@ allStudents.push(student);
 
 renderStudents(allStudents);
 
+/* DASHBOARD */
+
 totalStudents.innerText =
 allStudents.length;
+
+const paidCount =
+allStudents.filter(
+s => (s.status || "").toLowerCase() === "paid"
+).length;
+
+const pendingCount =
+allStudents.length - paidCount;
+
+let revenue = 0;
+
+allStudents.forEach(student=>{
+
+  revenue += Number(
+    student.fees || 0
+  );
+
+});
+
+paidStudents.innerText =
+paidCount;
+
+pendingStudents.innerText =
+pendingCount;
+
+totalRevenue.innerText =
+"₹" + revenue.toLocaleString();
+
+const currentMonth =
+new Date().getMonth();
+
+const currentYear =
+new Date().getFullYear();
+
+let monthStudents = 0;
+let monthRevenue = 0;
+
+allStudents.forEach(student=>{
+
+  if(student.createdAt){
+
+    const date =
+    student.createdAt.toDate
+    ? student.createdAt.toDate()
+    : new Date(student.createdAt);
+
+    if(
+      date.getMonth() === currentMonth &&
+      date.getFullYear() === currentYear
+    ){
+
+      monthStudents++;
+
+      monthRevenue += Number(
+        student.fees || 0
+      );
+
+    }
+
+  }
+
+});
+
+monthlyAdmissions.innerText =
+monthStudents;
+
+monthlyRevenue.innerText =
+"₹" + monthRevenue.toLocaleString();
 
 }
 

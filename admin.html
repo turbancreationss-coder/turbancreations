@@ -235,6 +235,12 @@ tr:hover{
 
 }
 
+.certificate-btn{
+
+  background:#6f42c1;
+
+}
+
 .status{
 
   padding:7px 12px;
@@ -706,6 +712,14 @@ Receipt
 
 </button>
 
+<button
+class="btn certificate-btn"
+onclick="generateCertificate('${student.id}')">
+
+Certificate
+
+</button>
+
 </td>
 
 </tr>
@@ -940,7 +954,25 @@ window.open(
 
 }
 
+window.generateCertificate =
+function(id){
 
+const student =
+allStudents.find(
+s => s.id === id
+);
+
+localStorage.setItem(
+"certificateStudent",
+JSON.stringify(student)
+);
+
+window.open(
+"certificate.html",
+"_blank"
+);
+
+}
 /* LOGOUT */
 
 window.logout = async function(){

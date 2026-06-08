@@ -91,41 +91,40 @@ z-index:1;
 
 position:absolute;
 
-width:180px;
-height:180px;
+width:220px;
+height:220px;
 
-background:#ff9800;
+border:8px solid #ff9800;
 
-opacity:.08;
+opacity:.25;
 
 z-index:1;
 
 }
 
 .corner-tl{
-top:-90px;
-left:-90px;
+top:-110px;
+left:-110px;
 border-radius:50%;
 }
 
 .corner-tr{
-top:-90px;
-right:-90px;
+top:-110px;
+right:-110px;
 border-radius:50%;
 }
 
 .corner-bl{
-bottom:-90px;
-left:-90px;
+bottom:-110px;
+left:-110px;
 border-radius:50%;
 }
 
 .corner-br{
-bottom:-90px;
-right:-90px;
+bottom:-110px;
+right:-110px;
 border-radius:50%;
 }
-
 /* CONTENT */
 
 .content{
@@ -146,15 +145,53 @@ text-align:center;
 
 .certificate-logo{
 
-width:340px;
+width: 250px;
 
 height:auto;
 
 display:block;
 
 margin:auto;
+margin-left: 40px;
+
+margin-top: 15px;
 
 object-fit:contain;
+
+}
+.top-decoration{
+
+position:absolute;
+
+top:18px;
+left:50%;
+
+transform:translateX(-50%);
+
+width:500px;
+height:6px;
+
+background:#ff9800;
+
+border-radius:20px;
+
+}
+
+.bottom-decoration{
+
+position:absolute;
+
+bottom:18px;
+left:50%;
+
+transform:translateX(-50%);
+
+width:500px;
+height:6px;
+
+background:#ff9800;
+
+border-radius:20px;
 
 }
 
@@ -162,15 +199,15 @@ object-fit:contain;
 
 .certificate-title{
 
-font-size:78px;
+font-size:50px;
 
-font-weight:900;
+font-weight:800;
 
 color:#111;
 
 letter-spacing:3px;
 
-margin-top:5px;
+margin-top:25px;
 
 line-height:1;
 
@@ -185,14 +222,14 @@ color:#ff9800;
 letter-spacing:6px;
 
 margin-top:5px;
-
+ 
 }
 
 /* PRESENTED */
 
 .presented{
 
-margin-top:20px;
+margin-top:10px;
 
 display:inline-block;
 
@@ -216,7 +253,7 @@ border-radius:5px;
 
 margin-top:25px;
 
-font-size:56px;
+font-size:46px;
 
 font-family:"Times New Roman";
 
@@ -270,7 +307,7 @@ font-weight:bold;
 
 color:#ff9800;
 
-margin-top:10px;
+margin-top:8px;
 
 }
 
@@ -278,35 +315,18 @@ margin-top:10px;
 
 .certificate-text{
 
-width:85%;
+width:97%;
 
-margin:20px auto;
+margin:10px auto;
 
-font-size:22px;
+font-size:18px;
 
 line-height:1.7;
 
 color:#444;
-
+margin-bottom: 3px;
 }
 
-/* INFO */
-
-.certificate-info{
-
-display:flex;
-
-justify-content:center;
-
-gap:60px;
-
-margin-top:15px;
-
-font-size:18px;
-
-font-weight:600;
-
-}
 
 /* FOOTER */
 
@@ -314,24 +334,23 @@ font-weight:600;
 
 position:absolute;
 
-bottom:30px;
+bottom:35px;
 
-left:60px;
-right:60px;
+left:0;
+right:0;
 
 display:flex;
 
-justify-content:space-between;
+justify-content:center;
 
-align-items:flex-end;
+align-items:center;
 
 }
-
 /* FOOTER BOX */
 
 .footer-box{
 
-width:250px;
+width:300px;
 
 text-align:center;
 
@@ -341,7 +360,7 @@ text-align:center;
 
 border-top:2px solid #111;
 
-margin-bottom:8px;
+margin-bottom:5px;
 
 }
 
@@ -355,23 +374,17 @@ font-weight:600;
 
 /* STAMP */
 
-.stamp{
 
-width:130px;
-
-height:auto;
-
-}
 
 /* SIGNATURE */
 
 .sign{
 
-width:180px;
-
+width:220px;
 height:auto;
-
-margin-bottom:8px;
+display:block;
+margin-left: 50px;
+margin-top: 5px;
 
 }
 
@@ -468,6 +481,25 @@ page-break-after:avoid;
 }
 
 }
+
+.certificate-info-top{
+
+position:absolute;
+
+top:40px;
+right:50px;
+
+text-align:right;
+
+font-size:16px;
+
+font-weight:600;
+
+color:#111;
+
+line-height:1.8;
+
+}
 </style>
 </head>
 
@@ -485,7 +517,8 @@ Print Certificate
 <div class="corner corner-br"></div>
 
 <div class="watermark"></div>
-
+<div class="top-decoration"></div>
+<div class="bottom-decoration"></div>
 <div class="content">
 
 
@@ -493,6 +526,19 @@ Print Certificate
 <img
 src="images/logo1.png"
 class="certificate-logo">
+<div class="certificate-info-top">
+
+<div>
+<strong>Certificate No:</strong>
+<span id="certificateNo"></span>
+</div>
+
+<div>
+<strong>Date:</strong>
+<span id="certificateDate"></span>
+</div>
+
+</div>
 
 <h1 class="certificate-title">
 CERTIFICATE
@@ -535,37 +581,11 @@ are highly appreciated.
 
 </p>
 
-<div class="certificate-info">
 
-<div>
-Certificate No :
-<span id="certificateNo"></span>
-</div>
-
-<div>
-Date :
-<span id="certificateDate"></span>
-</div>
-
-</div>
 
 <div class="certificate-footer">
 
-<div class="footer-box">
 
-<div class="footer-line"></div>
-
-<p>Course Director</p>
-
-</div>
-
-<div class="footer-box">
-
-<img
-src="images/stamp.png"
-class="stamp">
-
-</div>
 
 <div class="footer-box">
 
@@ -580,6 +600,7 @@ class="sign">
 </div>
 
 </div>
+
 
 </div>
 <script>

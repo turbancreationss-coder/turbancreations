@@ -5,9 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Certificate</title>
-
 <style>
-
 *{
 margin:0;
 padding:0;
@@ -20,19 +18,25 @@ background:#f0f0f0;
 padding:20px;
 }
 
+/* A4 LANDSCAPE */
+
 .certificate{
 
-width:1123px;
-height:794px;
+width:297mm;
+height:210mm;
+
 margin:auto;
+
 background:white;
+
 position:relative;
+
 overflow:hidden;
 
 border:15px solid #ff9800;
 
-box-shadow:
-0 0 30px rgba(0,0,0,.15);
+box-shadow:0 0 30px rgba(0,0,0,.15);
+
 }
 
 /* INNER BORDER */
@@ -51,6 +55,8 @@ bottom:15px;
 border:3px solid #111;
 
 pointer-events:none;
+z-index:1;
+
 }
 
 /* WATERMARK */
@@ -62,11 +68,10 @@ position:absolute;
 top:50%;
 left:50%;
 
-transform:
-translate(-50%,-50%);
+transform:translate(-50%,-50%);
 
-width:420px;
-height:420px;
+width:450px;
+height:450px;
 
 background:
 url("images/logo1.png")
@@ -74,9 +79,10 @@ center center no-repeat;
 
 background-size:contain;
 
-opacity:.05;
+opacity:.08;
 
 z-index:1;
+
 }
 
 /* CORNERS */
@@ -84,11 +90,16 @@ z-index:1;
 .corner{
 
 position:absolute;
+
 width:180px;
 height:180px;
+
 background:#ff9800;
+
 opacity:.08;
+
 z-index:1;
+
 }
 
 .corner-tl{
@@ -120,39 +131,49 @@ border-radius:50%;
 .content{
 
 position:relative;
-z-index:2;
 
-padding:45px 60px;
+z-index:2;
 
 height:100%;
 
+padding:30px 60px;
+
 text-align:center;
+
 }
 
 /* LOGO */
 
 .certificate-logo{
 
-width:260px;
+width:340px;
+
+height:auto;
 
 display:block;
 
 margin:auto;
+
+object-fit:contain;
+
 }
 
 /* TITLE */
 
 .certificate-title{
 
-font-size:70px;
+font-size:78px;
 
 font-weight:900;
 
 color:#111;
 
-margin-top:15px;
-
 letter-spacing:3px;
+
+margin-top:5px;
+
+line-height:1;
+
 }
 
 .certificate-subtitle{
@@ -161,16 +182,17 @@ font-size:28px;
 
 color:#ff9800;
 
+letter-spacing:6px;
+
 margin-top:5px;
 
-letter-spacing:5px;
 }
 
 /* PRESENTED */
 
 .presented{
 
-margin-top:25px;
+margin-top:20px;
 
 display:inline-block;
 
@@ -183,15 +205,18 @@ padding:10px 25px;
 font-size:18px;
 
 letter-spacing:2px;
+
+border-radius:5px;
+
 }
 
 /* NAME */
 
 .student-name{
 
-margin-top:35px;
+margin-top:25px;
 
-font-size:55px;
+font-size:56px;
 
 font-family:"Times New Roman";
 
@@ -206,17 +231,35 @@ display:inline-block;
 min-width:700px;
 
 padding-bottom:10px;
+
+}
+
+/* GOLD LINE */
+
+.gold-divider{
+
+width:250px;
+
+height:4px;
+
+background:#ff9800;
+
+margin:18px auto;
+
+border-radius:10px;
+
 }
 
 /* COURSE */
 
 .course-line{
 
-margin-top:25px;
+margin-top:15px;
 
 font-size:24px;
 
 color:#555;
+
 }
 
 .course-name{
@@ -228,24 +271,26 @@ font-weight:bold;
 color:#ff9800;
 
 margin-top:10px;
+
 }
 
-/* TEXT */
+/* DESCRIPTION */
 
 .certificate-text{
 
 width:85%;
 
-margin:30px auto;
+margin:20px auto;
 
 font-size:22px;
 
-line-height:1.8;
+line-height:1.7;
 
 color:#444;
+
 }
 
-/* CERTIFICATE INFO */
+/* INFO */
 
 .certificate-info{
 
@@ -255,11 +300,12 @@ justify-content:center;
 
 gap:60px;
 
-margin-top:25px;
+margin-top:15px;
 
 font-size:18px;
 
 font-weight:600;
+
 }
 
 /* FOOTER */
@@ -268,7 +314,7 @@ font-weight:600;
 
 position:absolute;
 
-bottom:40px;
+bottom:30px;
 
 left:60px;
 right:60px;
@@ -278,13 +324,17 @@ display:flex;
 justify-content:space-between;
 
 align-items:flex-end;
+
 }
+
+/* FOOTER BOX */
 
 .footer-box{
 
 width:250px;
 
 text-align:center;
+
 }
 
 .footer-line{
@@ -292,20 +342,25 @@ text-align:center;
 border-top:2px solid #111;
 
 margin-bottom:8px;
+
 }
 
 .footer-box p{
 
+font-size:16px;
+
 font-weight:600;
 
-font-size:16px;
 }
 
 /* STAMP */
 
 .stamp{
 
-width:120px;
+width:130px;
+
+height:auto;
+
 }
 
 /* SIGNATURE */
@@ -314,7 +369,10 @@ width:120px;
 
 width:180px;
 
+height:auto;
+
 margin-bottom:8px;
+
 }
 
 /* PRINT BUTTON */
@@ -341,21 +399,55 @@ border-radius:8px;
 cursor:pointer;
 
 z-index:9999;
+
 }
 
 .print-btn:hover{
 
 background:#111;
+
 color:white;
+
 }
 
-/* PRINT */
+/* IMAGE PRELOAD SUPPORT */
+
+img{
+
+max-width:100%;
+
+display:block;
+
+}
+
+/* PRINT SETTINGS */
+
+*{
+-webkit-print-color-adjust:exact !important;
+print-color-adjust:exact !important;
+}
+
+@page{
+size:A4 landscape;
+margin:0;
+}
 
 @media print{
 
+html,
 body{
-background:white;
+
+width:297mm;
+height:210mm;
+
+margin:0;
 padding:0;
+
+background:white;
+
+-webkit-print-color-adjust:exact !important;
+print-color-adjust:exact !important;
+
 }
 
 .print-btn{
@@ -363,11 +455,19 @@ display:none;
 }
 
 .certificate{
-box-shadow:none;
+
+width:297mm;
+height:210mm;
+
 margin:0;
-}
+
+box-shadow:none;
+
+page-break-after:avoid;
+
 }
 
+}
 </style>
 </head>
 

@@ -266,6 +266,37 @@ tr:hover{
   background:orange;
 
 }
+.active-course{
+
+background:#198754;
+
+color:white;
+
+padding:7px 12px;
+
+border-radius:20px;
+
+font-size:12px;
+
+font-weight:bold;
+
+}
+
+.completed-course{
+
+background:#dc3545;
+
+color:white;
+
+padding:7px 12px;
+
+border-radius:20px;
+
+font-size:12px;
+
+font-weight:bold;
+
+}
 
 .payment-badge{
 
@@ -389,6 +420,14 @@ placeholder="Search student by name or phone">
   <p id="monthlyRevenue">₹0</p>
 </div>
 
+<div class="card">
+
+<h2>Completed Courses</h2>
+
+<p id="completedCourses">0</p>
+
+</div>
+
 </div>
 
 
@@ -426,6 +465,14 @@ Payment
 
 <th>
 Joining Date
+</th>
+
+<th>
+Ending Date
+</th>
+
+<th>
+Course Status
 </th>
 
 <th>
@@ -618,6 +665,37 @@ monthStudents;
 monthlyRevenue.innerText =
 "₹" + monthRevenue.toLocaleString();
 
+
+/* COMPLETED COURSES */
+
+let completedCount = 0;
+
+allStudents.forEach(student=>{
+
+if(student.endingDate){
+
+const today = new Date();
+
+const endDate =
+new Date(student.endingDate);
+
+if(today > endDate){
+
+completedCount++;
+
+}
+
+}
+
+});
+
+document.getElementById(
+"completedCourses"
+).innerText =
+completedCount;
+
+}
+
 }
 
 
@@ -634,6 +712,23 @@ student.status || "Pending";
 
 const paymentMode =
 student.paymentMode || "-";
+
+let courseStatus = "Active";
+
+if(student.endingDate){
+
+const today = new Date();
+
+const endDate =
+new Date(student.endingDate);
+
+if(today > endDate){
+
+courseStatus = "Completed";
+
+}
+
+}
 
 const row = `
 
@@ -671,6 +766,22 @@ ${paymentMode}
 
 <td>
 ${student.joiningDate || "-"}
+</td>
+<td>
+${student.endingDate || "-"}
+</td>
+
+<td>
+
+<span class="
+${courseStatus === "Completed"
+? "completed-course"
+: "active-course"}">
+
+${courseStatus}
+
+</span>
+
 </td>
 
 <td>

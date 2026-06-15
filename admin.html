@@ -696,7 +696,7 @@ completedCount;
 
 }
 
-}
+
 
 
 /* RENDER */
@@ -941,6 +941,15 @@ student.joiningDate || ""
 
 if(joiningDate === null) return;
 
+const endDate = new Date(joiningDate);
+
+endDate.setMonth(
+endDate.getMonth() + 1
+);
+
+const endingDate =
+endDate.toISOString().split("T")[0];
+
 const newStatus =
 prompt(
 "Status: Paid or Pending",
@@ -969,6 +978,8 @@ fees:newFees,
 paymentMode:paymentMode,
 
 joiningDate:joiningDate,
+
+endingDate: endingDate,
 
 status:newStatus,
 

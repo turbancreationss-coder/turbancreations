@@ -564,6 +564,24 @@ document.getElementById(
 let allStudents = [];
 
 
+function parseDate(dateStr){
+
+if(!dateStr) return null;
+
+const parts =
+dateStr.split("/");
+
+return new Date(
+parts[2],
+parts[1]-1,
+parts[0]
+);
+
+}
+
+
+
+
 /* LOAD STUDENTS */
 
 async function loadStudents(){
@@ -677,9 +695,9 @@ if(student.endingDate){
 const today = new Date();
 
 const endDate =
-new Date(student.endingDate);
+parseDate(student.endingDate);
 
-if(today > endDate){
+if(endDate && today > endDate){
 
 completedCount++;
 
@@ -695,7 +713,6 @@ document.getElementById(
 completedCount;
 
 }
-
 
 
 
@@ -720,7 +737,7 @@ if(student.endingDate){
 const today = new Date();
 
 const endDate =
-new Date(student.endingDate);
+parseDate(student.endingDate);
 
 if(today > endDate){
 
@@ -941,14 +958,31 @@ student.joiningDate || ""
 
 if(joiningDate === null) return;
 
-const endDate = new Date(joiningDate);
+const parts =
+joiningDate.split("/");
+
+const day =
+parseInt(parts[0]);
+
+const month =
+parseInt(parts[1]) - 1;
+
+const year =
+parseInt(parts[2]);
+
+const endDate =
+new Date(year, month, day);
 
 endDate.setMonth(
 endDate.getMonth() + 1
 );
 
 const endingDate =
-endDate.toISOString().split("T")[0];
+String(endDate.getDate()).padStart(2,"0")
++ "/"
++ String(endDate.getMonth()+1).padStart(2,"0")
++ "/"
++ endDate.getFullYear();
 
 const newStatus =
 prompt(
